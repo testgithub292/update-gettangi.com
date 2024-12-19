@@ -208,6 +208,20 @@ cards.forEach(card => scrollobserver.observe(card));
 
 //--------------------------------------------------------------------
 
+const wcards = document.querySelectorAll('.menu_item');
 
+const withoutscrollobserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show'); // Remove for repeated animations
+        }
+    });
+}, {
+    threshold: 0.5 // 50% of the card must be visible
+});
+
+wcards.forEach(card => withoutscrollobserver.observe(card));
 
 
