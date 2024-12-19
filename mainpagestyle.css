@@ -201,7 +201,8 @@
   
   .section-heading,
   .section-text {
-    margin: 0;
+    margin: 0; 
+  
   }
   
   :root {
@@ -221,7 +222,7 @@
     height: 100%;
     position: relative;
     width: 100%;
-    max-width: 40ch;
+    max-width: 65ch;
   }
   
   .cookbook-header {
@@ -341,6 +342,7 @@
   
   .cookbook-article .section-text {
     color: black;
+    
   }
   
   .title-wrap {
@@ -349,6 +351,7 @@
   
   .content-wrap {
     align-self: start;
+    height: 200px;
   }
   
   :is(.title-wrap, .content-wrap) {
@@ -2278,8 +2281,8 @@ html, body {
   margin-top: 20px !important;
   max-width: 1200px;
   margin: 0 auto;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
  
 }
 
@@ -2660,4 +2663,118 @@ hr {
 
 .menu_text p:last-child {
   margin: 0;
+}
+
+
+/*----------------------- ------------------------------------*/
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 40px 0;
+}
+
+.secondlast-card {
+  position: relative;
+  min-width: 320px;
+  height: 440px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin: 30px;
+  transition: 0.5s;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/*.secondlast-card:nth-child(1) .inner-box .details a {
+  background: #2196f3;
+}
+
+.secondlast-card:nth-child(2) .inner-box .details a {
+  background: #e91e63;
+}
+
+.secondlast-card:nth-child(3) .inner-box .details a {
+  background: #23c186;
+}*/
+
+.secondlast-card .inner-box {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: #2a2b2f;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  padding-top:20px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.secondlast-card .inner-box:hover {
+  transform: translateY(-50px);
+}
+
+.secondlast-card .inner-box:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.secondlast-card .inner-box .details {
+  padding: 20px;
+  text-align: left;
+}
+
+.secondlast-card .inner-box .details h2 {
+  position: absolute;
+  top: 5px;
+  right: 60px;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.secondlast-card .inner-box .details h3 {
+  font-size: 1.6rem;
+  color: #fff;
+  z-index: 1;
+  transition: 0.5s;
+  margin-bottom: 15px;
+}
+
+.secondlast-card .inner-box .details p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.secondlast-card .inner-box .details a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  padding: 8px 20px;
+  background: white;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+
+.secondlast-card .inner-box .details a:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  background: #ffffff6b;
+  color: #000;
 }
