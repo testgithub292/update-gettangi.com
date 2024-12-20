@@ -168,6 +168,7 @@
     background: hsl(0 0% 90%);
     color: hsl(0 0% 10%);
     font-family: 'Times New Roman', Times, serif;
+  
   }
   
   .cookbook-wrapper::before {
@@ -182,8 +183,8 @@
           var(--line) 1px,
           transparent 1px var(--size)
         )
-        50% 50% / var(--size) var(--size),
-      linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+        10% 10% / var(--size) var(--size),
+      linear-gradient(var(--line) 1px, transparent 1px var(--size)) 10% 10% /
         var(--size) var(--size);
     mask: linear-gradient(-15deg, transparent 50%, white);
     top: 0;
@@ -197,6 +198,7 @@
     font-size: clamp(2rem, 3vw + 1rem, 8rem);
     padding-left: 10px;
     padding-right: 10px;
+  margin-bottom: 0px;
   }
   
   .section-heading,
@@ -226,9 +228,10 @@
   }
   
   .cookbook-header {
-    height: 50vh;
+    height: 30vh;
     display: grid;
     place-items: end;
+    margin-bottom: 0px !important;
   }
   
   .cookbook-main > section {
@@ -253,7 +256,7 @@
   .centered {
     display: grid;
     place-items: center;
-    width: 100%;
+    width: 100%;  
     max-width: 100%;
   }
   
@@ -298,7 +301,7 @@
     width: 100%;
     aspect-ratio: 1160 / 521;
     background-size: cover;
-    top: 50%;
+    top: 20%;
     left: 50%;
     translate: -50% -50%;
   }
@@ -319,21 +322,21 @@
   }
   
   .content_first {
-    min-height: 100vh;
+    min-height: 70vh;
     display: grid;
     grid-template: 1fr 1fr / 1fr;
     place-items: center;
     gap: 4rem;
     position: sticky;
     top: 0;
-    margin-bottom: 50vh;
+    margin-bottom: 40vh;
     padding: 2rem;
   }
   
   .cookbook-article {
     display: grid;
     position: absolute;
-    height: 100%;
+    height: 140%;
     grid-template-rows: auto auto 1fr;
     top: 0;
     left: 0;
@@ -351,7 +354,7 @@
   
   .content-wrap {
     align-self: start;
-    height: 200px;
+    height: 350px;
   }
   
   :is(.title-wrap, .content-wrap) {
