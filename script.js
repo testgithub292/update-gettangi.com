@@ -225,3 +225,26 @@ const withoutscrollobserver = new IntersectionObserver((entries) => {
 wcards.forEach(card => withoutscrollobserver.observe(card));
 
 
+/*------------------------------------------------------------*/
+
+  // Get references to elements
+  const fullLine = document.getElementById('fullLine');
+  const animatedText = document.getElementById('animatedText');
+  const logo = document.getElementById('logo');
+  const modal = document.getElementById('exampleModal');
+
+  // Modal close event
+  modal.addEventListener('hidden.bs.modal', () => {
+    // Show full line text
+    fullLine.classList.add('visible');
+
+    // After full line animation, show split text animation
+    setTimeout(() => {
+      animatedText.classList.add('active');
+
+      // After text animation, show logo animation
+      setTimeout(() => {
+        logo.classList.add('visible');
+      }, 1000);
+    }, 800); // Delay for full line animation
+  });
