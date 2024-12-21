@@ -248,3 +248,7 @@ wcards.forEach(card => withoutscrollobserver.observe(card));
       }, 1000);
     }, 800); // Delay for full line animation
   });
+
+
+  //---------------------------------------------------------------------------
+
