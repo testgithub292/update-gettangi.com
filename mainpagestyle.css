@@ -210,10 +210,10 @@
   }
   @media (max-width: 500px) {
     .containerfirstlineanimation {
-      font-size: 50px;
+      font-size: 40px;
     }
     .full-line {
-      font-size: 20px;
+      font-size: 18px;
     }
   }
   
