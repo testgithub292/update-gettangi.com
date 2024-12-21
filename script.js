@@ -252,3 +252,24 @@ wcards.forEach(card => withoutscrollobserver.observe(card));
 
   //---------------------------------------------------------------------------
 
+  window.onscroll = function() {hideButtonsOnScroll()};
+
+  function hideButtonsOnScroll() {
+      var button1 = document.getElementById("fixedBtn");
+      var button2 = document.getElementById("fixedButtontop");
+      var footer = document.querySelector("footer");
+      var footerPosition = footer.getBoundingClientRect().top;
+      
+      // Buttons ko hide karna jab footer screen ke andar aaye
+      if (footerPosition <= window.innerHeight) {
+          button1.style.display = "none";
+          button2.style.display = "none";
+      } else {
+          button1.style.display = "block";
+          button2.style.display = "block";
+      }
+  }
+  
+  
+  
+ 
