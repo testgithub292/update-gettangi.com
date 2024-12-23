@@ -269,6 +269,43 @@ wcards.forEach(card => withoutscrollobserver.observe(card));
           button2.style.display = "block";
       }
   }
+
+
+ 
+  // When the user scrolls, hide or show the button based on the footer position
+  /*window.onscroll = function () {
+      hideButtonOnScroll();
+  };
+
+  function hideButtonOnScroll() {
+      var button = document.getElementById("fixedBtn");
+      var footer = document.querySelector("footer");
+      var footerPosition = footer.getBoundingClientRect().top;
+
+      // Hide button when footer comes into view
+      if (footerPosition <= window.innerHeight) {
+          button.style.display = "none";
+      } else {
+          button.style.display = "block";
+      }
+  }
+
+  // Function to handle modal close and replace button with a video
+  function handleModalClose() {
+      var button = document.getElementById("fixedBtn");
+      var videoContainer = document.getElementById("videoContainer");
+
+      // Hide the button
+      button.style.display = "none";
+
+      // Show the video
+      videoContainer.style.display = "block";
+  }
+
+  // Attach the function to the modal close event
+  document.getElementById("myModal").addEventListener("hidden.bs.modal", handleModalClose);*/
+
+
   
   
   
