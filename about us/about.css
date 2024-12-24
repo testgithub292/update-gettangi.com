@@ -464,7 +464,7 @@ color: var(--color);
   margin-top: 72px;
   width: 100%;
   height: 350px;
-  background: linear-gradient(135deg, #6111b8, #2574fc4f); /* Gradient background */
+  background: linear-gradient(to right, white, #d3d3d3, wheat); /* Gradient background */
   position: relative;
   overflow: hidden;
 }
@@ -476,7 +476,7 @@ color: var(--color);
   top: 60%;
   transform: translateY(-50%);
   z-index: 1; /* Content above images */
-  color: white; /* Text color changed to white */
+  color: black; /* Text color changed to white */
   font-size: 22px; /* Increased text size */
 }
 
@@ -511,7 +511,10 @@ h1 {
   width: 100px;
   border-radius: 50%; /* Makes images circular */
   transition: all 0.5s ease; /* Transition effect for both logos */
+  
+  filter: brightness(0) opacity(0.5);
 }
+
 
 /* Positioning logo1 at a fixed position */
 .logo1 {
@@ -573,7 +576,7 @@ h1 {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      background: linear-gradient(135deg, #6211b8a4, #9a5adf17);
+      
     }
     .card {
       background-color: azure;
@@ -739,3 +742,30 @@ h1 {
         width: 100%;
       }
     }
+
+
+
+    
+    /* Scrollbar ko style karein */
+::-webkit-scrollbar {
+  width: 10px; /* Horizontal scroll ke liye height bhi set kar sakte hain */
+  height: 10px;
+}
+
+/* Scrollbar ki background */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Scrollbar track ka color */
+  border-radius: 10px; /* Track ka radius */
+}
+
+/* Scrollbar ka thumb (jo move karta hai) */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Thumb ka color */
+  border-radius: 10px; /* Thumb ka radius */
+}
+
+/* Hover par thumb ka color badalna */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
