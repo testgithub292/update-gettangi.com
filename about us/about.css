@@ -1,42 +1,42 @@
 .navbarcolorstyle{
 
-    background-color: #4B0082;
+    background-color: whitesmoke;
   }
   #navbarcolorstyle{
-  background-color: #4B0082;
+  background-color: whitesmoke;
   } 
   
   #textstyle{
     font-size: 16px;
-    color: white;
+    color: black;
     font-family: "Source Sans Pro", "Arial", sans-serif;
   }
   #accountDropdown{
     font-size: 16px;
-  color: white;
+  color: black;
   font-family: "Source Sans Pro", "Arial", sans-serif;
   }
   #servicesDropdown{
     font-size: 16px;
-  color: white;
+  color: black;
   font-family: "Source Sans Pro", "Arial", sans-serif;
   }
   #navbarDropdown{
     font-size: 16px;
-    color: white;
+    color: black;
     text-decoration: none;
     font-family: "Source Sans Pro", "Arial", sans-serif;
   }
   
   
   #offcanvasNavbarDropdown{
-    background-color: #4B0082;
-    color: white;
+    background-color: whitesmoke;
+    color: black;
     font-family: "Source Sans Pro", "Arial", sans-serif;
   }
   #dropdownitemcolor{
-    background-color: #4B0082;
-    color: white;
+    background-color: whitesmoke;
+    color: black;
     font-family: "Source Sans Pro", "Arial", sans-serif;
   }
   .navbar-toggler-icon{
@@ -65,7 +65,7 @@
    padding-right: 10px;
     margin-right: 20px;
     margin-top: 20px;
-    --color: white;
+    --color: black;
   
   display: inline-block;
   position: relative;
@@ -143,7 +143,7 @@
     position: relative;
   }
   body{
-    background-color: #333333c9 !important;
+    background-color: #dfd5cd !important;
   }
   
   /*--------------------------------------------------------------------------*/
@@ -156,8 +156,8 @@
 ----------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------*/
 .site-footer {
-    background-color: #4B0082;
-    color: #fff;
+    background-color: whitesmoke;
+    color: black;
     padding: 40px 0 20px;
   }
   
@@ -187,7 +187,7 @@
   }
   
   .footer-links a {
-    color: #fff;
+    color: black;
     text-decoration: none;
     transition: opacity 0.3s ease;
   }
@@ -210,8 +210,8 @@
   }
   
   .footer-contact button {
-    background-color: #fff;
-    color: #009668;
+    background-color: black;
+    color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
@@ -220,8 +220,8 @@
   }
   
   .footer-contact button:hover {
-    background-color: #e6e6e6;
-    color: #007a54;
+    background-color: rgba(0, 0, 0, 0.671);
+    color: whitesmoke;
   }
   
   .footer-bottom {
@@ -242,7 +242,7 @@
   }
   
   .social-icon {
-    color: #fff;
+    color: black  ;
     font-size: 24px;
     text-decoration: none;
     width: 40px;
@@ -250,13 +250,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(53, 48, 48, 0.1);
     border-radius: 50%;
     transition: background-color 0.3s ease;
   }
   
   .social-icon:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.295);
   }
   
   .footer-legal {
@@ -265,7 +265,7 @@
   }
   
   .legal-link {
-    color: #fff;
+    color: black;
     text-decoration: none;
     font-size: 14px;
     transition: opacity 0.3s ease;
