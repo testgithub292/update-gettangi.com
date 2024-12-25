@@ -2632,6 +2632,7 @@ font-family:Arial, Helvetica, sans-serif;
 
 #scrollTopBtn:hover {
   background-color: #333;
+  color: white;
 }
 
 #scrollTopBtn i {

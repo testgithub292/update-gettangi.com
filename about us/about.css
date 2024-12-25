@@ -298,12 +298,12 @@
   }
   
   .social-icon.fa-tiktok {
-    font-size: 22px; /* TikTok icon ko thoda chota kar diya */
+    font-size: 22px; 
   }
   /* top icon css--------------------------------------------------------------------
   -----------------------------------------------------------------------------------------*/
   
-  /*#scrollTopBtn {
+  #scrollTopBtn {
     display: none;
     position: fixed;
     bottom: 20px;
@@ -312,7 +312,7 @@
     border: none;
     outline: none;
     background-color: #555;
-    color: white;
+    color: black;
     cursor: pointer;
     padding: 15px;
     border-radius: 50%;
@@ -322,12 +322,13 @@
   
   #scrollTopBtn:hover {
     background-color: #333;
+    color: white;
   }
   
   #scrollTopBtn i {
     font-size: 30px;
   }
-  */
+  
   
   #scrollTopBtn {
     display: none;
