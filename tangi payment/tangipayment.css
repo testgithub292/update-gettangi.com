@@ -52,11 +52,12 @@
   }
 
   .bytokenbtnnav2{
-    display: none !important;
+    display: none !important;font-family: 'Times New Roman', Times, serif;
 }
 
 .bytokenbtnnav{
   margin-right: 15px !important;
+  font-family: 'Times New Roman', Times, serif;
 }
   #contact_bt_css{
     height: fit-content;
@@ -66,8 +67,8 @@
    padding-right: 10px;
     margin-right: 20px;
     margin-top: 20px;
-    --color: white;
-  
+    --color: black;
+  font-family: 'Times New Roman', Times, serif;
   display: inline-block;
   position: relative;
   cursor: pointer;
@@ -88,10 +89,11 @@
     height: 150px;
     width: 200px;
     border-radius: 50%;
+    font-family: 'Times New Roman', Times, serif;
   }
   
   #contact_bt_css:hover {
-    color: black;
+    color: white;
     border: 2px solid #32cd32;
   }
   
@@ -116,7 +118,7 @@
   @media (max-width: 1200px) {
   
       .navbar-toggler {
-         color: white !important;
+         color: black !important;
         }
 
         .bytokenbtnnav2{
@@ -157,9 +159,10 @@
 ----------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------*/
 .site-footer {
-    background-color: #4B0082;
-    color: #fff;
+    background-color: whitesmoke;
+    color: black;
     padding: 40px 0 20px;
+    font-family: 'Times New Roman', Times, serif;
   }
   
   .footer-content {
@@ -188,7 +191,7 @@
   }
   
   .footer-links a {
-    color: #fff;
+    color: black;
     text-decoration: none;
     transition: opacity 0.3s ease;
   }
@@ -211,8 +214,8 @@
   }
   
   .footer-contact button {
-    background-color: #fff;
-    color: #009668;
+    background-color: black;
+    color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
@@ -221,8 +224,8 @@
   }
   
   .footer-contact button:hover {
-    background-color: #e6e6e6;
-    color: #007a54;
+    background-color: rgba(0, 0, 0, 0.534);
+    color: white;
   }
   
   .footer-bottom {
@@ -243,7 +246,7 @@
   }
   
   .social-icon {
-    color: #fff;
+    color: black;
     font-size: 24px;
     text-decoration: none;
     width: 40px;
@@ -251,13 +254,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.123);
     border-radius: 50%;
     transition: background-color 0.3s ease;
   }
   
   .social-icon:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.377);
   }
   
   .footer-legal {
@@ -266,7 +269,7 @@
   }
   
   .legal-link {
-    color: #fff;
+    color: black;
     text-decoration: none;
     font-size: 14px;
     transition: opacity 0.3s ease;
@@ -302,7 +305,7 @@
   /* top icon css--------------------------------------------------------------------
   -----------------------------------------------------------------------------------------*/
   
-  /*#scrollTopBtn {
+  #scrollTopBtn {
     display: none;
     position: fixed;
     bottom: 20px;
@@ -311,7 +314,7 @@
     border: none;
     outline: none;
     background-color: #555;
-    color: white;
+    color: black;
     cursor: pointer;
     padding: 15px;
     border-radius: 50%;
@@ -320,13 +323,14 @@
   }
   
   #scrollTopBtn:hover {
-    background-color: #333;
+    background-color: #333; 
+    color: white;
   }
   
   #scrollTopBtn i {
     font-size: 30px;
   }
-  */
+  
   
   #scrollTopBtn {
     display: none;
@@ -467,7 +471,7 @@ color: var(--color);
   margin-top: 72px;
   height: 400px;
   width: 100%;
-  background: linear-gradient(to right, #4c008256, #7A33A8, #C29EDB); /* Blue gradient */
+  background-color:rgba(250, 235, 215, 0.877); /* Blue gradient */
   position: relative;
   overflow: hidden;
 }
@@ -477,6 +481,7 @@ color: var(--color);
   left: 20px;
   width: 100px; /* Adjust logo size */
   height: auto;
+  
 }
 .content {
   margin-top: 100px; /* Adjust based on logo height */
@@ -506,6 +511,7 @@ color: var(--color);
   right: 10px; /* Position logo to the right */
   width: 150px; /* Adjust logo size */
   height: auto;
+  
 }
 .top-bottom-logo {
   position: absolute;
@@ -513,6 +519,7 @@ color: var(--color);
   left: 300px; /* Align with the bottom logo */
   width: 50px; /* Adjust logo size */
   height: auto;
+  filter: brightness(0) opacity(0.5);
 }
 @media (max-width: 850px) {
   .bottom-logo {
@@ -613,7 +620,7 @@ p {
   margin-top: 72px;
   width: 100%;
   height: 400px;
-  background: linear-gradient(135deg, #6111b8, #2574fc4f); /* Gradient background */
+background-color:#f0eeef;
   position: relative;
   overflow: hidden;
 }
@@ -624,7 +631,7 @@ p {
   top: 30%;
   transform: translateY(-50%);
   z-index: 1; /* Content above images */
-  color: white; /* Text color changed to white */
+  color: black; /* Text color changed to white */
   font-size: 22px; /* Increased text size */
 }
 
@@ -658,6 +665,8 @@ h1 {
   width: 100px;
   border-radius: 50%; /* Makes images circular */
   transition: all 0.5s ease; /* Transition effect for both logos */
+  
+  filter: brightness(0) opacity(0.5);
 }
 
 /* Positioning logo1 at a fixed position */
@@ -738,28 +747,29 @@ h1 {
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.2);
+  background: white;
 }
 .glowing-text {
   font-family:'Times New Roman', Times, serif;
   font-size: 25px;
   line-height: 2;
   text-align: center;
-  color: white; /* Dark blue text color */
+  color: black; /* Dark blue text color */
   /*text-shadow: 0 0 10px #66b3ff, 0 0 20px #66b3ff, 0 0 30px #66b3ff;*/
   animation: glow 1.5s ease-in-out infinite alternate;
 }
-@keyframes glow {
+/*@keyframes glow {
   from {
       text-shadow: 0 0 5px #36404988, 0 0 10px #6077517a, 0 0 15px #66ff6e50;
   }
   to {
       text-shadow: 0 0 10px #6a6f748c, 0 0 20px #57657269, 0 0 30px #9eff6675;
   }
-}
+}*/
 .image-section {
   flex: 1;
   overflow: hidden;
+  
 }
 .image-section img {
   width: 100%;
@@ -862,3 +872,26 @@ p {
 }
 
 
+    /* Scrollbar ko style karein */
+    ::-webkit-scrollbar {
+      width: 10px; /* Horizontal scroll ke liye height bhi set kar sakte hain */
+      height: 10px;
+    }
+    
+    /* Scrollbar ki background */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1; /* Scrollbar track ka color */
+      border-radius: 10px; /* Track ka radius */
+    }
+    
+    /* Scrollbar ka thumb (jo move karta hai) */
+    ::-webkit-scrollbar-thumb {
+      background: #888; /* Thumb ka color */
+      border-radius: 10px; /* Thumb ka radius */
+    }
+    
+    /* Hover par thumb ka color badalna */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+    

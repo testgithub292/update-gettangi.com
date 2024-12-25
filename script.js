@@ -397,7 +397,7 @@ if (scrollTopBtn) {
 
 /*--------------------------------------------------------------------*/
 
-document.addEventListener("DOMContentLoaded", () => {
+/*document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("exampleModal");
     const modalVideo = document.getElementById("modalVideo");
     const miniVideoContainer = document.getElementById("miniVideoContainer");
@@ -418,6 +418,39 @@ document.addEventListener("DOMContentLoaded", () => {
     // Hide mini video when clicked
     miniVideoContainer.addEventListener("click", () => {
       miniVideoContainer.classList.remove("active");
+      miniVideo.pause();
+    });
+  });
+*/  
+
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("exampleModal");
+    const modalVideo = document.getElementById("modalVideo");
+    const miniVideoContainer = document.getElementById("miniVideoContainer");
+    const miniVideo = document.getElementById("miniVideo");
+  
+    // When modal starts closing
+    modal.addEventListener("hide.bs.modal", () => {
+      modalVideo.pause();
+      modalVideo.currentTime = 0; // Reset the main video
+    });
+  
+    // When modal is completely closed
+    modal.addEventListener("hidden.bs.modal", () => {
+      miniVideoContainer.classList.add("active");
+  
+      // Start shrinking animation after appearing
+      setTimeout(() => {
+        miniVideoContainer.classList.add("shrinking");
+      }, 500);
+  
+      // Play mini video
+      miniVideo.play();
+    });
+  
+    // Hide mini video when clicked
+    miniVideoContainer.addEventListener("click", () => {
+      miniVideoContainer.classList.remove("active", "shrinking");
       miniVideo.pause();
     });
   });

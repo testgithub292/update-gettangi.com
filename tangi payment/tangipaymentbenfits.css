@@ -19,7 +19,8 @@
     overflow: hidden;
     box-sizing: border-box;
     border: hidden;
-    background: linear-gradient(135deg, #c29edb 20%, #e8d8f2 40%, #ffffff 50%, #e8d8f2 60%, #c29edb 80%);
+    background: linear-gradient(90deg, #f7e7e171, #ffdab9b2, #f5eded);
+
   
     color: black;
     /*background: linear-gradient(to bottom, #ff7e5f, #feb47b);*/
