@@ -271,7 +271,7 @@ wcards.forEach(card => withoutscrollobserver.observe(card));
   }*/
 
       // Single scroll event handler
-window.onscroll = function() {
+/*window.onscroll = function() {
     hideButtonsOnScroll();
     scrollFunction();
 };
@@ -308,6 +308,91 @@ document.getElementById("scrollTopBtn").onclick = function() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
 };
 
+*/
+// Get button elements
+const fixedBtn = document.getElementById('fixedBtn');
+const fixedButtontop = document.getElementById('fixedButtontop'); // Optional
+const scrollTopBtn = document.getElementById('scrollTopBtn'); // Optional
+
+// Variables to track scrolling and hover state
+let scrollTimer;
+let hoverTimer;
+let isHovering = false;
+
+// Single scroll event handler
+window.onscroll = function () {
+    if (!isHovering) {
+        hideButtonsOnScroll();
+        scrollFunction();
+        handleFixedButtonVisibility();
+    }
+};
+
+// Hide buttons when footer is in view
+function hideButtonsOnScroll() {
+    const footer = document.querySelector('footer');
+    const footerPosition = footer.getBoundingClientRect().top;
+
+    if (footerPosition <= window.innerHeight) {
+        fixedBtn.style.display = 'none';
+        if (fixedButtontop) fixedButtontop.style.display = 'none';
+    } else {
+        fixedBtn.style.display = 'block';
+        if (fixedButtontop) fixedButtontop.style.display = 'block';
+    }
+}
+
+// Show/hide scroll-to-top button
+function scrollFunction() {
+    if (scrollTopBtn) {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollTopBtn.style.display = 'block';
+        } else {
+            scrollTopBtn.style.display = 'none';
+        }
+    }
+}
+
+// Handle visibility of fixed button on scroll
+function handleFixedButtonVisibility() {
+    // Show the button on scroll
+    fixedBtn.style.display = 'block';
+
+    // Clear the timer if it exists
+    if (scrollTimer) clearTimeout(scrollTimer);
+
+    // Hide the button 1 second after scroll stops
+    scrollTimer = setTimeout(() => {
+        if (!isHovering) {
+            fixedBtn.style.display = 'none';
+        }
+    }, 1000);
+}
+
+// Add hover events to prevent hiding
+fixedBtn.addEventListener('mouseover', () => {
+    isHovering = true;
+    if (hoverTimer) clearTimeout(hoverTimer); // Clear hover timer if active
+});
+
+fixedBtn.addEventListener('mouseout', () => {
+    isHovering = false;
+
+    // Start a timer to hide the button 1 second after mouse leaves
+    hoverTimer = setTimeout(() => {
+        if (!isHovering) {
+            fixedBtn.style.display = 'none';
+        }
+    }, 1000);
+});
+
+// Scroll to top on button click
+if (scrollTopBtn) {
+    scrollTopBtn.onclick = function () {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    };
+}
 
 
  

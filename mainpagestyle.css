@@ -75,7 +75,7 @@
     margin-right: 0px;
     margin-top: 20px;
     --color: black;
-  
+  font-family: 'Times New Roman', Times, serif;
   display: inline-block;
   position: relative;
   cursor: pointer;
@@ -96,6 +96,7 @@
     height: 150px;
     width: 200px;
     border-radius: 50%;
+    font-family: 'Times New Roman', Times, serif;
   }
   
   #contact_bt_css:hover {
@@ -124,7 +125,7 @@
   @media (max-width: 1200px) {
   
       .navbar-toggler {
-         color: white !important;
+         color: black !important;
         }
 
         .bytokenbtnnav2{
@@ -3910,7 +3911,8 @@ hr {
   position: fixed;
   bottom: 20px;
   left: 10px;
-
+  display: none; /* Button initially hidden */
+  z-index: 1000;
   
 }
 

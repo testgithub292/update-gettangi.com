@@ -9,35 +9,35 @@
   #textstyle{
     font-size: 16px;
     color: black;
-    font-family: "Source Sans Pro", "Arial", sans-serif;
+    font-family: 'Times New Roman', Times, serif;
   }
   #accountDropdown{
     font-size: 16px;
   color: black;
-  font-family: "Source Sans Pro", "Arial", sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   }
   #servicesDropdown{
     font-size: 16px;
   color: black;
-  font-family: "Source Sans Pro", "Arial", sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   }
   #navbarDropdown{
     font-size: 16px;
     color: black;
     text-decoration: none;
-    font-family: "Source Sans Pro", "Arial", sans-serif;
+    font-family: 'Times New Roman', Times, serif;
   }
   
   
   #offcanvasNavbarDropdown{
     background-color: whitesmoke;
     color: black;
-    font-family: "Source Sans Pro", "Arial", sans-serif;
+    font-family: 'Times New Roman', Times, serif;
   }
   #dropdownitemcolor{
     background-color: whitesmoke;
     color: black;
-    font-family: "Source Sans Pro", "Arial", sans-serif;
+    font-family:'Times New Roman', Times, serif;
   }
   .navbar-toggler-icon{
     background-color: aliceblue;
@@ -56,6 +56,7 @@
 
 .bytokenbtnnav{
   margin-right: 15px !important;
+  font-family: 'Times New Roman', Times, serif;
 }
   #contact_bt_css{
     height: fit-content;
@@ -66,7 +67,7 @@
     margin-right: 20px;
     margin-top: 20px;
     --color: black;
-  
+  font-family: 'Times New Roman', Times, serif;
   display: inline-block;
   position: relative;
   cursor: pointer;
@@ -87,10 +88,11 @@
     height: 150px;
     width: 200px;
     border-radius: 50%;
+    font-family: 'Times New Roman', Times, serif;
   }
   
   #contact_bt_css:hover {
-    color: black;
+    color: white;
     border: 2px solid #32cd32;
   }
   
@@ -115,7 +117,7 @@
   @media (max-width: 1200px) {
   
       .navbar-toggler {
-         color: white !important;
+         color: black !important;
         }
 
         .bytokenbtnnav2{
