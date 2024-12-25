@@ -2532,7 +2532,7 @@ font-family:Arial, Helvetica, sans-serif;
 }
 
 .footer-contact button:hover {
-  background-color: rgba(0, 0, 0, 0.733);
+  background-color: rgba(0, 0, 0, 0.623);
   color: whitesmoke;
 }
 
@@ -2568,7 +2568,7 @@ font-family:Arial, Helvetica, sans-serif;
 }
 
 .social-icon:hover {
-  background-color: rgba(0, 0, 0, 0.568);
+  background-color: rgba(0, 0, 0, 0.342);
 }
 
 .footer-legal {
@@ -3917,25 +3917,44 @@ hr {
   
 }
 
-#fixedButtontop {
+/*#fixedButtontop {
   position: fixed;
-  top: 80px; /* Adjust for desired vertical position */
-  left: 10px; /* Adjust for desired horizontal position */
-  z-index: 1050; /* Ensure it stays above other elements but below modal */
+  top: 80px; /* Adjust for desired vertical position 
+  left: 10px; /* Adjust for desired horizontal position 
+  z-index: 1050; /* Ensure it stays above other elements but below modal 
 
 }
 
 .fixedButtontop {
   position: fixed;
-  top: 80px; /* Adjust for desired vertical position */
-  left: 10px; /* Adjust for desired horizontal position */
-  z-index: 1050; /* Ensure it stays above other elements but below modal */
+  top: 80px; /* Adjust for desired vertical position 
+  left: 10px; /* Adjust for desired horizontal position 
+  z-index: 1050; /* Ensure it stays above other elements but below modal 
 
 }
 #videoadjust{
   cursor: pointer;
   height: 110px;
  }
+ */
 
- 
+ #miniVideo{
+  width: 100px;
+  height: 100px;
+ }
+ .mini-video-container {
+  display: none;
+  position: fixed;
+  top: 80px;
+  left: 5px;
+  width: 200px;
+  height: auto;
+   /* Higher than modal */
+  transition: all 1s ease-in-out;
+}
 
+.mini-video-container.active {
+  display: block;
+  transform: scale(1);
+  opacity: 1;
+}

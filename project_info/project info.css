@@ -300,7 +300,7 @@
   /* top icon css--------------------------------------------------------------------
   -----------------------------------------------------------------------------------------*/
   
-  /*#scrollTopBtn {
+  #scrollTopBtn {
     display: none;
     position: fixed;
     bottom: 20px;
@@ -309,7 +309,7 @@
     border: none;
     outline: none;
     background-color: #555;
-    color: white;
+    color: black;
     cursor: pointer;
     padding: 15px;
     border-radius: 50%;
@@ -324,7 +324,7 @@
   #scrollTopBtn i {
     font-size: 30px;
   }
-  */
+  
   
   #scrollTopBtn {
     display: none;
@@ -894,7 +894,7 @@ p {
   font-size: 25px;
   font-family: 'Times New Roman', Times, serif !important;
 }
-
+ 
 
 #compareable_projectbg{
 

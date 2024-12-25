@@ -395,6 +395,34 @@ if (scrollTopBtn) {
 }
 
 
+/*--------------------------------------------------------------------*/
+
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("exampleModal");
+    const modalVideo = document.getElementById("modalVideo");
+    const miniVideoContainer = document.getElementById("miniVideoContainer");
+    const miniVideo = document.getElementById("miniVideo");
+  
+    // Close button with animation
+    modal.addEventListener("hidden.bs.modal", () => {
+      miniVideoContainer.classList.add("active");
+      miniVideo.play(); // Play the mini video after modal closes
+    });
+  
+    // Stop main video when modal closes
+    modal.addEventListener("hide.bs.modal", () => {
+      modalVideo.pause();
+      modalVideo.currentTime = 0; // Reset video to the start
+    });
+  
+    // Hide mini video when clicked
+    miniVideoContainer.addEventListener("click", () => {
+      miniVideoContainer.classList.remove("active");
+      miniVideo.pause();
+    });
+  });
+  
+
  
 
 

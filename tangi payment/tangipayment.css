@@ -1,43 +1,43 @@
 .navbarcolorstyle{
 
-    background-color: #4B0082;
+    background-color: whitesmoke;
   }
   #navbarcolorstyle{
-  background-color: #4B0082;
+  background-color: whitesmoke;
   }
   
   #textstyle{
     font-size: 16px;
-    color: white;
-    font-family: "Source Sans Pro", "Arial", sans-serif;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
   }
   #accountDropdown{
     font-size: 16px;
-  color: white;
-  font-family: "Source Sans Pro", "Arial", sans-serif;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
   }
   #servicesDropdown{
     font-size: 16px;
-  color: white;
-  font-family: "Source Sans Pro", "Arial", sans-serif;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
   }
   #navbarDropdown{
     font-size: 16px;
-    color: white;
+    color: black;
     text-decoration: none;
-    font-family: "Source Sans Pro", "Arial", sans-serif;
+    font-family: 'Times New Roman', Times, serif;
   }
   
   
   #offcanvasNavbarDropdown{
-    background-color: #4B0082;
-    color: white;
-    font-family: "Source Sans Pro", "Arial", sans-serif;
+    background-color: whitesmoke;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
   }
   #dropdownitemcolor{
-    background-color: #4B0082;
-    color: white;
-    font-family: "Source Sans Pro", "Arial", sans-serif;
+    background-color: whitesmoke;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
   }
   .navbar-toggler-icon{
     background-color: aliceblue;
