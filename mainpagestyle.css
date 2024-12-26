@@ -155,6 +155,18 @@
   }
  
   
+  .hedingtangi {
+    z-index: 999;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  }
+  @media (max-width: 768px) {
+    .hedingtangi {
+      margin-top: 40px;
+      font-size: 30px;
+    }
+  }
   /*--------------------------------------------------------------------------*/
   .containerfirstlineanimation {
     font-family: 'Times New Roman', Times, serif;
@@ -227,7 +239,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
+
+
 .cookbook-wrapper {
 display: grid;
 place-items: center;
@@ -256,8 +271,9 @@ background: linear-gradient(
 mask: linear-gradient(-15deg, transparent 50%, white);
 top: 0;
 transform-style: flat;
-pointer-events: none;
+pointer-events: auto;
 z-index: -1;
+
 }
 
 .cookbook-title {
@@ -292,6 +308,8 @@ height: 100%;
 position: relative;
 width: 100%;
 max-width: 70ch;
+pointer-events: auto !important; /* Ensure links respond to clicks */
+user-select: text !important; 
 }
 
 .cookbook-header {
@@ -576,6 +594,7 @@ mask: linear-gradient(transparent, white 10px calc(100% - 10px), transparent);
   --via: 0 -150%;
   --destination: 0 -150%;
 }
+
 
 .tile:nth-of-type(3),
 .tile:nth-of-type(3)::after,
@@ -3834,7 +3853,7 @@ hr {
     grid-area: img;
   }
 }
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+/*@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");*/
 
 
 .h1lastcard {
@@ -3939,7 +3958,7 @@ hr {
  */
 
  #miniVideo{
-  width: 100px;
+  width: 70px;
   height: 100px;
  }
  /*.mini-video-container {
