@@ -464,13 +464,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const scrollY = window.scrollY; // Get current scroll position
   
     // Show the heading when user scrolls down more than 200px
-    if (!isHeadingVisible && scrollY > 200) {
+    if (!isHeadingVisible && scrollY > 190) {
       headingTangi.style.display = "block"; // Show the heading
       isHeadingVisible = true; // Mark as visible
     }
   
     // Hide the heading when user scrolls back up less than 200px
-    if (isHeadingVisible && scrollY <= 200) {
+    if (isHeadingVisible && scrollY <= 190) {
       headingTangi.style.display = "none"; // Hide the heading
       isHeadingVisible = false; // Mark as not visible
     }
