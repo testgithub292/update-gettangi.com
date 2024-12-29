@@ -34,19 +34,23 @@
         document.body.style.overflow = 'auto';
     }
 });*/
-
 document.addEventListener("DOMContentLoaded", function() {
+    // Initially hide scrollbar
+    document.body.style.overflow = 'hidden'; // Hide scrollbar during loading
+
     // Display loading animation for 2 seconds
     setTimeout(function() {
         // Hide loading animation and show content
         document.getElementById('loading').style.display = 'none';
-        document.body.style.overflow = 'auto'; // Enable scrolling after loading
-
-        // Trigger Bootstrap modal
+        
+        // Optional: Trigger Bootstrap modal if needed
         var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
             keyboard: true
         });
         myModal.show();
+
+        // Keep the scrollbar hidden after the loading is done
+        document.body.style.overflow = 'hidden'; // Keep the scrollbar hidden
     }, 2000); // Set delay to 2 seconds (2000 ms)
 });
 
@@ -252,65 +256,9 @@ wcards.forEach(card => withoutscrollobserver.observe(card));
 
   //---------------------------------------------------------------------------
 
- /* window.onscroll = function() {hideButtonsOnScroll()};
 
-  function hideButtonsOnScroll() {
-      var button1 = document.getElementById("fixedBtn");
-      var button2 = document.getElementById("fixedButtontop");
-      var footer = document.querySelector("footer");
-      var footerPosition = footer.getBoundingClientRect().top;
-      
-      // Buttons ko hide karna jab footer screen ke andar aaye
-      if (footerPosition <= window.innerHeight) {
-          button1.style.display = "none";
-          button2.style.display = "none";
-      } else {
-          button1.style.display = "block";
-          button2.style.display = "block";
-      }
-  }*/
-
-      // Single scroll event handler
-/*window.onscroll = function() {
-    hideButtonsOnScroll();
-    scrollFunction();
-};
-
-// Hide buttons when footer is in view
-function hideButtonsOnScroll() {
-    var button1 = document.getElementById("fixedBtn");
-    var button2 = document.getElementById("fixedButtontop");
-    var footer = document.querySelector("footer");
-    var footerPosition = footer.getBoundingClientRect().top;
-
-    if (footerPosition <= window.innerHeight) {
-        button1.style.display = "none";
-        button2.style.display = "none";
-    } else {
-        button1.style.display = "block";
-        button2.style.display = "block";
-    }
-}
-
-// Show/hide scroll-to-top button
-function scrollFunction() {
-    var scrollTopBtn = document.getElementById("scrollTopBtn");
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollTopBtn.style.display = "block";
-    } else {
-        scrollTopBtn.style.display = "none";
-    }
-}
-
-// Scroll to top on button click
-document.getElementById("scrollTopBtn").onclick = function() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
-};
-
-*/
 // Get button elements
-const fixedBtn = document.getElementById('fixedBtn');
+/*const fixedBtn = document.getElementById('fixedBtn');
 const fixedButtontop = document.getElementById('fixedButtontop'); // Optional
 const scrollTopBtn = document.getElementById('scrollTopBtn'); // Optional
 
@@ -393,35 +341,99 @@ if (scrollTopBtn) {
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
     };
 }
+*/
+const fixedBtn = document.getElementById('fixedBtn');
+const fixedButtontop = document.getElementById('fixedButtontop'); // Optional
+const scrollTopBtn = document.getElementById('scrollTopBtn'); // Optional
 
+// Variables to track scrolling and hover state
+let scrollTimer;
+let hoverTimer;
+let isHovering = false;
+
+// Single scroll event handler
+window.onscroll = function () {
+    if (!isHovering) {
+        hideButtonsOnScroll();
+        scrollFunction();
+        handleFixedButtonVisibility();
+    }
+};
+
+// Hide buttons when footer is in view
+function hideButtonsOnScroll() {
+    const footer = document.querySelector('footer');
+    const footerPosition = footer.getBoundingClientRect().top;
+
+    if (footerPosition <= window.innerHeight) {
+        fixedBtn.style.display = 'none';
+        if (fixedButtontop) fixedButtontop.style.display = 'none';
+    } else {
+        fixedBtn.style.display = 'block';
+        if (fixedButtontop) fixedButtontop.style.display = 'block';
+    }
+}
+
+// Show/hide scroll-to-top button
+function scrollFunction() {
+    if (scrollTopBtn) {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollTopBtn.style.display = 'block';
+        } else {
+            scrollTopBtn.style.display = 'none';
+        }
+    }
+}
+
+// Handle visibility of fixed button on scroll
+function handleFixedButtonVisibility() {
+    // Show the button on scroll
+    fixedBtn.style.display = 'block';
+
+    // Clear the timer if it exists
+    if (scrollTimer) clearTimeout(scrollTimer);
+
+    // Hide the button 1 second after scroll stops
+    scrollTimer = setTimeout(() => {
+        if (!isHovering) {
+            fixedBtn.style.display = 'none';
+        }
+    }, 1000);
+}
+
+// Add hover events to prevent hiding
+fixedBtn.addEventListener('mouseover', () => {
+    isHovering = true;
+    if (hoverTimer) clearTimeout(hoverTimer); // Clear hover timer if active
+});
+
+fixedBtn.addEventListener('mouseout', () => {
+    isHovering = false;
+
+    // Start a timer to hide the button 1 second after mouse leaves
+    hoverTimer = setTimeout(() => {
+        if (!isHovering) {
+            fixedBtn.style.display = 'none';
+        }
+    }, 1000);
+});
+
+// Scroll to top on button click
+if (scrollTopBtn) {
+    scrollTopBtn.onclick = function () {
+        // Scroll to top of the page
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+
+        // Reset sections to the first section
+        if (typeof updateSlide === 'function') {
+            updateSlide(0); // Ensure this function is defined in your section script
+        }
+    };
+}
 
 /*--------------------------------------------------------------------*/
 
-/*document.addEventListener("DOMContentLoaded", () => {
-    const modal = document.getElementById("exampleModal");
-    const modalVideo = document.getElementById("modalVideo");
-    const miniVideoContainer = document.getElementById("miniVideoContainer");
-    const miniVideo = document.getElementById("miniVideo");
-  
-    // Close button with animation
-    modal.addEventListener("hidden.bs.modal", () => {
-      miniVideoContainer.classList.add("active");
-      miniVideo.play(); // Play the mini video after modal closes
-    });
-  
-    // Stop main video when modal closes
-    modal.addEventListener("hide.bs.modal", () => {
-      modalVideo.pause();
-      modalVideo.currentTime = 0; // Reset video to the start
-    });
-  
-    // Hide mini video when clicked
-    miniVideoContainer.addEventListener("click", () => {
-      miniVideoContainer.classList.remove("active");
-      miniVideo.pause();
-    });
-  });
-*/  
 
 document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("exampleModal");
@@ -464,13 +476,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const scrollY = window.scrollY; // Get current scroll position
   
     // Show the heading when user scrolls down more than 200px
-    if (!isHeadingVisible && scrollY > 200) {
+    if (!isHeadingVisible && scrollY > 190) {
       headingTangi.style.display = "block"; // Show the heading
       isHeadingVisible = true; // Mark as visible
     }
   
     // Hide the heading when user scrolls back up less than 200px
-    if (isHeadingVisible && scrollY <= 200) {
+    if (isHeadingVisible && scrollY <= 190) {
       headingTangi.style.display = "none"; // Hide the heading
       isHeadingVisible = false; // Mark as not visible
     }
@@ -480,4 +492,147 @@ document.addEventListener("DOMContentLoaded", () => {
   
   
   
- 
+ /*-------------------------------------------------------*/
+ /*-----------------------------------------------------------------*/
+ //----------------------------------------
+ const panelWrap = document.getElementById('panelWrap');
+const dots = document.querySelectorAll('.dot');
+const upArrow = document.getElementById('upArrow');
+const downArrow = document.getElementById('downArrow');
+
+let currentIndex = 0;
+const totalSections = dots.length;
+let isScrolling = false;
+let sliderLocked = true; // Lock slider by default
+let hideScrollbar = true; // Track if scrollbar should be hidden
+
+// Function to update slide
+function updateSlide(index) {
+    if (index < 0 || index >= totalSections) return;
+
+    panelWrap.style.transform = `translateY(-${index * 100}vh)`;
+    currentIndex = index;
+
+    // Unlock website scroll only when slider is fully completed
+    if (currentIndex === totalSections - 1 || currentIndex === 0) {
+        sliderLocked = false; // Unlock scroll
+    } else {
+        sliderLocked = true; // Lock scroll
+    }
+
+    // Hide scroll bar when at the top section
+    if (currentIndex === 0) {
+        document.body.style.overflow = 'hidden';
+        hideScrollbar = true;
+    }
+
+    // Show scroll bar when transitioning from top to bottom and reaching the bottom
+    if (currentIndex === totalSections - 1) {
+        document.body.style.overflow = 'auto';
+        hideScrollbar = false;
+    }
+
+    // Hide scroll bar when navigating from bottom to top and reaching the first section
+    if (currentIndex === 0 && hideScrollbar) {
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+// Lock or unlock page scrolling
+function toggleScrollLock(lock) {
+    document.body.style.overflow = lock ? 'hidden' : 'auto';
+}
+
+// Event listeners for dots
+dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => updateSlide(i));
+});
+
+// Event listeners for arrows
+upArrow.addEventListener('click', () => {
+    if (currentIndex > 0) updateSlide(currentIndex - 1);
+});
+downArrow.addEventListener('click', () => {
+    if (currentIndex < totalSections - 1) updateSlide(currentIndex + 1);
+});
+
+// Mouse wheel scroll
+document.addEventListener('wheel', (e) => {
+    if (isScrolling) return;
+
+    if (!sliderLocked && window.scrollY > 0) return; // Normal scroll if slider is unlocked
+
+    e.preventDefault(); // Prevent normal scroll while slider is active
+    isScrolling = true;
+
+    setTimeout(() => (isScrolling = false), 800); // Prevent rapid scrolling
+
+    if (e.deltaY > 0 && currentIndex < totalSections - 1) {
+        updateSlide(currentIndex + 1); // Scroll down
+    } else if (e.deltaY < 0 && currentIndex > 0) {
+        updateSlide(currentIndex - 1); // Scroll up
+    }
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (isScrolling) return;
+
+    if (!sliderLocked && window.scrollY > 0) return; // Normal scroll if slider is unlocked
+
+    isScrolling = true;
+
+    setTimeout(() => (isScrolling = false), 800); // Prevent rapid scrolling
+
+    if (e.key === 'ArrowDown' && currentIndex < totalSections - 1) {
+        updateSlide(currentIndex + 1); // Scroll down
+    } else if (e.key === 'ArrowUp' && currentIndex > 0) {
+        updateSlide(currentIndex - 1); // Scroll up
+    }
+});
+
+// Touch gestures
+let touchStartY = 0;
+let touchEndY = 0;
+
+document.addEventListener('touchstart', (e) => {
+    touchStartY = e.touches[0].clientY;
+});
+
+document.addEventListener('touchend', (e) => {
+    touchEndY = e.changedTouches[0].clientY;
+
+    if (isScrolling) return;
+
+    if (!sliderLocked && window.scrollY > 0) return; // Normal scroll if slider is unlocked
+
+    isScrolling = true;
+
+    setTimeout(() => (isScrolling = false), 800); // Prevent rapid scrolling
+
+    if (touchStartY - touchEndY > 50 && currentIndex < totalSections - 1) {
+        updateSlide(currentIndex + 1); // Scroll down
+    } else if (touchEndY - touchStartY > 50 && currentIndex > 0) {
+        updateSlide(currentIndex - 1); // Scroll up
+    }
+});
+
+// Scroll event to re-lock slider
+document.addEventListener('scroll', () => {
+    if (!sliderLocked && window.scrollY === 0 && hideScrollbar) {
+        sliderLocked = true; // Re-lock slider at the top
+        toggleScrollLock(true);
+    } else if (!sliderLocked && window.scrollY > 0 && !hideScrollbar) {
+        toggleScrollLock(false); // Unlock scroll for rest of the website
+    }
+});
+
+// Initial lock
+toggleScrollLock(true);
+
+// Transition end listener
+panelWrap.addEventListener('transitionend', () => {
+    if (!sliderLocked && currentIndex !== 0) toggleScrollLock(false); // Enable normal scrolling after slider completes
+});
+
+
