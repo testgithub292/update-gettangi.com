@@ -350,7 +350,7 @@ margin-top: 110px;
   
   .dots {
     position: absolute;
-    top: 50%;
+    top: 35%;
     right: 25px;
     transform: translateY(-50%);
     z-index: 100;
@@ -393,11 +393,11 @@ margin-top: 110px;
   }
   
   #downArrow {
-    bottom: 150px;
+    bottom: 260px;
   }
   
   #upArrow {
-    top: 150px;
+    top: 80px;
   }
   
   @media (max-width: 700px) {
@@ -1730,7 +1730,7 @@ hr {
 
  #miniVideo{
   width:fit-content;
-  height: 50px;
+  height: 40px;
  }
  /*.mini-video-container {
   display: none;
@@ -1751,7 +1751,7 @@ hr {
 .mini-video-container {
   display: none;
   position: fixed;
-  top: 10% !important;
+  top: 80px !important;
   left: 5px !important;
   width: 0px;
   height: 300px;
