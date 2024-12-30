@@ -495,7 +495,7 @@ document.addEventListener("DOMContentLoaded", () => {
  /*-------------------------------------------------------*/
  /*-----------------------------------------------------------------*/
  //----------------------------------------
- const panelWrap = document.getElementById('panelWrap');
+ /*const panelWrap = document.getElementById('panelWrap');
 const dots = document.querySelectorAll('.dot');
 const upArrow = document.getElementById('upArrow');
 const downArrow = document.getElementById('downArrow');
@@ -635,4 +635,228 @@ panelWrap.addEventListener('transitionend', () => {
     if (!sliderLocked && currentIndex !== 0) toggleScrollLock(false); // Enable normal scrolling after slider completes
 });
 
+*/
+const panelWrap = document.getElementById('panelWrap');
+const dots = document.querySelectorAll('.dot');
+const upArrow = document.getElementById('upArrow');
+const downArrow = document.getElementById('downArrow');
 
+let currentIndex = 0;
+const totalSections = dots.length;
+let isScrolling = false;
+let sliderLocked = true; // Lock slider by default
+let hideScrollbar = true; // Track if scrollbar should be hidden
+
+// Function to update slide
+function updateSlide(index) {
+    if (index < 0 || index >= totalSections) return;
+
+    panelWrap.style.transform = `translateY(-${index * 100}vh)`;
+    currentIndex = index;
+
+    // Unlock website scroll only when slider is fully completed
+    if (currentIndex === totalSections - 1 || currentIndex === 0) {
+        sliderLocked = false; // Unlock scroll
+    } else {
+        sliderLocked = true; // Lock scroll
+    }
+
+    // Hide scroll bar when at the top section
+    if (currentIndex === 0) {
+        document.body.style.overflow = 'hidden';
+        hideScrollbar = true;
+    }
+
+    // Show scroll bar when transitioning from top to bottom and reaching the bottom
+    if (currentIndex === totalSections - 1) {
+        document.body.style.overflow = 'auto';
+        hideScrollbar = false;
+    }
+
+    // Hide scroll bar when navigating from bottom to top and reaching the first section
+    if (currentIndex === 0 && hideScrollbar) {
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Update active dot
+    updateActiveDot(currentIndex);
+}
+
+// Lock or unlock page scrolling
+function toggleScrollLock(lock) {
+    document.body.style.overflow = lock ? 'hidden' : 'auto';
+}
+
+// Event listeners for dots
+dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => updateSlide(i));
+});
+
+// Event listeners for arrows
+upArrow.addEventListener('click', () => {
+    if (currentIndex > 0) updateSlide(currentIndex - 1);
+});
+downArrow.addEventListener('click', () => {
+    if (currentIndex < totalSections - 1) updateSlide(currentIndex + 1);
+});
+
+// Mouse wheel scroll
+document.addEventListener('wheel', (e) => {
+    if (isScrolling) return;
+
+    if (!sliderLocked && window.scrollY > 0) return; // Normal scroll if slider is unlocked
+
+    e.preventDefault(); // Prevent normal scroll while slider is active
+    isScrolling = true;
+
+    setTimeout(() => (isScrolling = false), 800); // Prevent rapid scrolling
+
+    if (e.deltaY > 0 && currentIndex < totalSections - 1) {
+        updateSlide(currentIndex + 1); // Scroll down
+    } else if (e.deltaY < 0 && currentIndex > 0) {
+        updateSlide(currentIndex - 1); // Scroll up
+    }
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (isScrolling) return;
+
+    if (!sliderLocked && window.scrollY > 0) return; // Normal scroll if slider is unlocked
+
+    isScrolling = true;
+
+    setTimeout(() => (isScrolling = false), 800); // Prevent rapid scrolling
+
+    if (e.key === 'ArrowDown' && currentIndex < totalSections - 1) {
+        updateSlide(currentIndex + 1); // Scroll down
+    } else if (e.key === 'ArrowUp' && currentIndex > 0) {
+        updateSlide(currentIndex - 1); // Scroll up
+    }
+});
+
+// Touch gestures
+let touchStartY = 0;
+let touchEndY = 0;
+
+document.addEventListener('touchstart', (e) => {
+    touchStartY = e.touches[0].clientY;
+});
+
+document.addEventListener('touchend', (e) => {
+    touchEndY = e.changedTouches[0].clientY;
+
+    if (isScrolling) return;
+
+    if (!sliderLocked && window.scrollY > 0) return; // Normal scroll if slider is unlocked
+
+    isScrolling = true;
+
+    setTimeout(() => (isScrolling = false), 800); // Prevent rapid scrolling
+
+    if (touchStartY - touchEndY > 50 && currentIndex < totalSections - 1) {
+        updateSlide(currentIndex + 1); // Scroll down
+    } else if (touchEndY - touchStartY > 50 && currentIndex > 0) {
+        updateSlide(currentIndex - 1); // Scroll up
+    }
+});
+
+// Scroll event to re-lock slider
+document.addEventListener('scroll', () => {
+    if (!sliderLocked && window.scrollY === 0 && hideScrollbar) {
+        sliderLocked = true; // Re-lock slider at the top
+        toggleScrollLock(true);
+    } else if (!sliderLocked && window.scrollY > 0 && !hideScrollbar) {
+        toggleScrollLock(false); // Unlock scroll for rest of the website
+    }
+});
+
+// Update active dot based on current section
+function updateActiveDot(index) {
+    dots.forEach((dot, i) => {
+        if (i === index) {
+            dot.classList.add('active'); // Highlight the current dot
+        } else {
+            dot.classList.remove('active'); // Remove highlight from other dots
+        }
+    });
+}
+
+// Initial lock
+toggleScrollLock(true);
+
+// Transition end listener
+panelWrap.addEventListener('transitionend', () => {
+    if (!sliderLocked && currentIndex !== 0) toggleScrollLock(false); // Enable normal scrolling after slider completes
+});
+
+
+//--------------------------------------------------------------------------------
+function showIntroCard(cardId) {
+    const cards = document.querySelectorAll('.intro-card');
+    const menuItems = document.querySelectorAll('.intro-menu a');
+    
+    // Reset the active class and hide all cards
+    cards.forEach(card => {
+        card.classList.remove('active');
+        card.style.display = 'none';
+        card.style.opacity = 0;
+    });
+
+    // Show the selected card
+    const activeCard = document.getElementById(cardId);
+    activeCard.classList.add('active');
+    activeCard.style.display = 'flex'; // Show active card again
+
+    // Reset active class on menu items
+    menuItems.forEach((item) => {
+        item.classList.remove('active');
+    });
+
+    // Set active class on the selected menu item
+    const activeMenuItem = document.querySelector(`.intro-menu a[onclick="showIntroCard('${cardId}')"]`);
+    if (activeMenuItem) {
+        activeMenuItem.classList.add('active');
+    }
+}
+
+//------------------------------------------------------
+
+const strings = ["TOKEN", "PAYMENT"];
+    const typedElement = document.getElementById("typed");
+    let currentIndexpage = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+      const currentString = strings[currentIndexpage];
+      const typingSpeed = isDeleting ? 80 : 150; // Smoother speed adjustments
+
+      if (!isDeleting) {
+        charIndex++;
+        typedElement.textContent = currentString.slice(0, charIndex);
+
+        if (charIndex === currentString.length) {
+          isDeleting = true;
+          setTimeout(type, 2000); // Hold before deleting
+          return;
+        }
+      } else {
+        charIndex--;
+        typedElement.textContent = currentString.slice(0, charIndex);
+
+        if (charIndex === 0) {
+          isDeleting = false;
+          currentIndexpage = (currentIndexpage + 1) % strings.length; // Move to next string
+        }
+      }
+
+      setTimeout(type, typingSpeed);
+    }
+
+    type();
+    
+
+    //======================================================================================
+
+    

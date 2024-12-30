@@ -606,8 +606,13 @@
     </header> 
 
     <main>
+      
       <div class="hedingtangi" id="hedingtangi" style="display: none; position: fixed; top: 55px; left: 50%; transform: translateX(-50%);">
-        <p>Tangi Token</p>
+        <main class="main page__main">
+          <h1 class="main__title">
+            TANGI <span id="typed" class="main__word"></span>.
+          </h1>
+        </main>
       </div>
    
               <div id="masterWrap">
@@ -731,51 +736,53 @@
             </div>
    
 
-    <div class="container-fluid">
-      <div class="scroll">
-        <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">A Solution Fiat Currency Can’t Offer </h5>
-              <h6 class="card-subtitle mb-2 text-muted"></h6>
-              <p class="card-text">The token solves a problem fiat currency created: the  <b>inefficiencies, risks, and costs</b> of handling vast amounts of cash in the cannabis industry. This is a real-world solution, not just hype.</p>
-              <!--a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a-->
-            </div>
-          </div><div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Utility-Driven, Not Speculation</h5>
-              <h6 class="card-subtitle mb-2 text-muted"></h6>
-              <p class="card-text">Tangi Token isn’t a <b>gamble on future trends</b>—it’s a currency designed to solve a <b>pressing problem</b> today. Backed by a compliant payment solution, it delivers <b>real benefits to retailers, consumers, and investors alike.</b></p>
-              <!--a href="#" class="card-link"></a>
-              <a href="#" class="card-link"></a-->
-            </div>
-          </div><div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Risk Mitigated, Unlimited Upside</h5>
-              <h6 class="card-subtitle mb-2 text-muted"></h6>
-              <p class="card-text">Our original investors absorbed much of the early risk. You’re stepping in at the <b>perfect time</b>—when the hard work is complete, the foundation is strong, and the upside potential is unlimited.</p>
-              <!--a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a-->
-            </div>
-          </div><div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Public Listing</h5>
-              <h6 class="card-subtitle mb-2 text-muted"></h6>
-              <p class="card-text">When the token is publicly listed, <b>early investors</b> will benefit from a <b>ready-made</b> user base and the momentum of new investors <b>recognising its potential.</b></p>
-              <!--a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a-->
-            </div>
-          </div><div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Scroll down or watch our video </h5>
-              <h6 class="card-subtitle mb-2 text-muted"></h6>
-              <p class="card-text">We’re not here to sell you on anything—our work stands on its own two feet based on merit. Our goal is simply to share the facts so you can decide if we’re the right fit for your investment journey.</p>
-              <!--a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a-->
-            </div>
+            <div class="intro-container">
+              <div class="intro-menu">
+                  <a onclick="showIntroCard('intro-card-people')">CryptoFix</a>
+                  <a onclick="showIntroCard('intro-card-payroll')">UtiliTrade</a>
+                  <a onclick="showIntroCard('intro-card-benefits')">SafeRise</a>
+                  <a onclick="showIntroCard('intro-card-payments')">Pub-List</a>
+                  <a onclick="showIntroCard('intro-card-timeoff')">ViewNow</a>
+              </div>
+              <div class="intro-content">
+                  <div id="intro-card-people" class="intro-card active">
+                      <img src="https://via.placeholder.com/100" alt="Icon">
+                      <div class="intro-card-content">
+                          <p class="intro-card-title">A Solution Fiat Currency Can’t Offer</p>
+                          <p>The token solves a problem fiat currency created: the <b>inefficiencies, risks, and costs</b> of handling vast amounts of cash in the cannabis industry. This is a real-world solution, not just hype.</p>
+                      </div>
+                  </div>
+                  <div id="intro-card-payroll" class="intro-card">
+                      <img src="https://via.placeholder.com/100" alt="Icon">
+                      <div class="intro-card-content">
+                          <p class="intro-card-title">Utility-Driven, Not Speculation</p>
+                          <p>Tangi Token isn’t a <b> gamble on future trends</b> —it’s a currency designed to solve a <b>pressing problem</b> today. Backed by a compliant payment solution, it delivers <b>real benefits to retailers, consumers, and investors alike.</b></p>
+                      </div>
+                  </div>
+                  <div id="intro-card-benefits" class="intro-card">
+                      <img src="https://via.placeholder.com/100" alt="Icon">
+                      <div class="intro-card-content">
+                          <p class="intro-card-title">Risk Mitigated, Unlimited Upside</p>
+                          <p>Our original investors absorbed much of the early risk. You’re stepping in at the <b>perfect time</b>—when the hard work is complete, the foundation is strong, and the upside potential is unlimited.</p>
+                      </div>
+                  </div>
+                  <div id="intro-card-payments" class="intro-card">
+                      <img src="https://via.placeholder.com/100" alt="Icon">
+                      <div class="intro-card-content">
+                          <p class="intro-card-title">Public Listing</p>
+                          <p>When the token is publicly listed, <b>early investors</b> will benefit from a <b>ready-made</b> user base and the momentum of new investors <b>recognising its potential</b>.</p>
+                      </div>
+                  </div>
+                  <div id="intro-card-timeoff" class="intro-card">
+                      <img src="https://via.placeholder.com/100" alt="Icon">
+                      <div class="intro-card-content">
+                          <p class="intro-card-title">Scroll down or watch our video</p>
+                          <p>We’re not here to sell you on anything—our work stands on its own two feet based on merit. Our goal is simply to share the facts so you can decide if we’re the right fit for your investment journey.</p>
+                      </div>
+                  </div>
+              </div>
           </div>
-       </div>
-    </div>
+      
 
 
       
@@ -967,9 +974,23 @@
         </p>
       </div>
 
+    <div class="invest-body">
+      <div class="container-invest">
+        <div class="text-content-invest">
+            <h2>Investing in Tangible Success, Not Speculation</h2>
+            <p class="plastcard">
+              <p>We are committed to delivering real value, not hype. Our strategy is built on solving real-world problems with a compliant, scalable solution, paving the way for long-term success.</p>
+              <p><b>Why Tangi Is a Smart Investment ?</b></p>
+              <a href="" data-bs-toggle="modal" data-bs-target="#section_6_modal" style="text-decoration: underline;">Learn More</a>
+            </p>
+        </div>
+        <div class="image-content-invest">
+            <img src="images/investing in tangible.gif" alt="Payments Interface">
+        </div>
+    </div>
 
-
-      <section class="sectionlastcard">
+    </div>
+      <!--section class="sectionlastcard">
         <h1 class="h1lastcard">Investing in Tangible Success, Not Speculation</h1>
         <div class="contentlastcard">
           <p class="plastcard">
@@ -982,7 +1003,7 @@
         <div class="imglastcard">
           <img class="imglcard" src="images/investing in tangible.gif"/>
         </div>
-      </section>
+      </section-->
   
 
 
