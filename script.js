@@ -469,7 +469,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
 
  
-  let isHeadingVisible = false; // Track whether the heading is currently visible
+/*  let isHeadingVisible = false; // Track whether the heading is currently visible
 
   document.addEventListener("scroll", function () {
     const headingTangi = document.getElementById("hedingtangi");
@@ -487,7 +487,7 @@ document.addEventListener("DOMContentLoaded", () => {
       isHeadingVisible = false; // Mark as not visible
     }
   });
-  
+  */
 
   
   
