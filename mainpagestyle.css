@@ -1752,7 +1752,7 @@ hr {
   display: none;
   position: fixed;
   top: 10% !important;
-  left: 15px !important;
+  left: 5px !important;
   width: 0px;
   height: 300px;
   transform: translate(-50%, -50%);
