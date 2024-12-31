@@ -229,7 +229,7 @@ const withoutscrollobserver = new IntersectionObserver((entries) => {
 wcards.forEach(card => withoutscrollobserver.observe(card));
 
 
-/*------------------------------------------------------------*/
+/*------------------------------------------------------------
 
   // Get references to elements
   const fullLine = document.getElementById('fullLine');
@@ -251,7 +251,35 @@ wcards.forEach(card => withoutscrollobserver.observe(card));
         logo.classList.add('visible');
       }, 1000);
     }, 800); // Delay for full line animation
-  });
+  });*/
+
+  // Get references to elements
+const fullLine = document.getElementById('fullLine');
+const animatedText = document.getElementById('animatedText');
+const logo = document.getElementById('logofirstlineanimation');
+const modal = document.getElementById('exampleModal');
+const backgroundGif = document.getElementById('backgroundGif'); // Reference to the background GIF container
+
+// Modal close event
+modal.addEventListener('hidden.bs.modal', () => {
+    // Show full line text
+    fullLine.classList.add('visible');
+
+    // After full line animation, show split text animation
+    setTimeout(() => {
+      animatedText.classList.add('active');
+
+      // After text animation, show logo animation
+      setTimeout(() => {
+        logo.classList.add('visible');
+      }, 1000);
+    }, 800); // Delay for full line animation
+
+    // Show the background GIF and trigger the new animation when modal is closed
+    backgroundGif.style.display = 'block'; // Make background GIF visible
+    backgroundGif.style.animation = 'zoomInBackground 2s ease-in-out forwards'; // Start zoom-in animation
+});
+
 
 
   //---------------------------------------------------------------------------
