@@ -288,6 +288,22 @@
     .containerfirstlineanimation {
       font-size: 60px;
     }
+    #backgroundGif {
+      display: none !important;
+    }
+    #downArrow {
+      display: none !important;
+    }
+    
+    #upArrow {
+      display: none !important;
+    }
+    .dots {
+      right: 10px !important;
+    }
+    section {
+       background: hsl(0 0% 90%) !important;
+    }
   }
   @media (max-width: 500px) {
     .containerfirstlineanimation {
@@ -384,7 +400,7 @@
   
   .dots {
     position: absolute;
-    top: 35%;
+    top:40%;
     right: 25px;
     transform: translateY(-50%);
     z-index: 100;
@@ -427,11 +443,11 @@
   }
   
   #downArrow {
-    bottom: 260px;
+    bottom: 150px;
   }
   
   #upArrow {
-    top: 80px;
+    top: 40px;
   }
   
   @media (max-width: 700px) {
