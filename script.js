@@ -252,7 +252,6 @@ wcards.forEach(card => withoutscrollobserver.observe(card));
       }, 1000);
     }, 800); // Delay for full line animation
   });*/
-
   // Get references to elements
 const fullLine = document.getElementById('fullLine');
 const animatedText = document.getElementById('animatedText');
@@ -280,6 +279,8 @@ modal.addEventListener('hidden.bs.modal', () => {
     backgroundGif.style.animation = 'zoomInBackground 2s ease-in-out forwards'; // Start zoom-in animation
 });
 
+
+  
 
 
   //---------------------------------------------------------------------------
