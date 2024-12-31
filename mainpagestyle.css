@@ -546,7 +546,14 @@ margin-top: 110px;
 
 .intro-content {
   flex-grow: 1;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.5); 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
+  
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  /*background-color: #fff;*/
   padding: 40px;
   display: flex;
   flex-direction: row;
@@ -990,8 +997,8 @@ margin-top: 110px;
   box-sizing: border-box;
 }*/
 body {
-  background-color: #dfd5cd !important;
-  /* background-color: #0056b3c9 !important;*/
+ /* background-color: #dfd5cd !important;*/
+   background-color: hsla(0, 0%, 90%, 0.082) !important
 }
 
     
@@ -1161,7 +1168,14 @@ body {
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  background-color: var(--purple);
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.5); 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
+  
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   border-radius: 5px 25px 5px 50px;
   transition: transform 0.1s linear, box-shadow 0.2s;
 }
@@ -1433,9 +1447,16 @@ body {
 }
 
 .menu_card {
-  background-color: white;
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.5); 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
+  
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   border-radius: 0.25rem;
-  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -1634,7 +1655,14 @@ hr {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background: white;
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.5); 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
+  
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   border-radius: 8px;
  
   opacity: 0;
@@ -1751,8 +1779,8 @@ hr {
 .mini-video-container {
   display: none;
   position: fixed;
-  top: 80px !important;
-  left: 5px !important;
+  top: 50%;
+  left: 50%;
   width: 0px;
   height: 300px;
   transform: translate(-50%, -50%);
