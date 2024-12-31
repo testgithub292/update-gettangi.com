@@ -311,7 +311,7 @@
      }
 
      .s_second_img{
-      margin-top: 100px;
+      margin-top: 50px;
       border-radius: 15px;
      }
    .s_second{
@@ -445,8 +445,8 @@
       text-align: center;
       width: 100%;
       font-size: 17px;
-      padding-left: 30px;
-      padding-right: 30px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
     .textseconds{
       width: 100%;
