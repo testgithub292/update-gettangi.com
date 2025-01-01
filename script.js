@@ -498,7 +498,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
 
  
-/*  let isHeadingVisible = false; // Track whether the heading is currently visible
+  let isHeadingVisible = false; // Track whether the heading is currently visible
 
   document.addEventListener("scroll", function () {
     const headingTangi = document.getElementById("hedingtangi");
@@ -516,7 +516,7 @@ document.addEventListener("DOMContentLoaded", () => {
       isHeadingVisible = false; // Mark as not visible
     }
   });
-  */
+  
 
   
   
@@ -819,6 +819,17 @@ panelWrap.addEventListener('transitionend', () => {
     if (!sliderLocked && currentIndex !== 0) toggleScrollLock(false); // Enable normal scrolling after slider completes
 });
 
+const scrollToThirdSection = document.getElementById('scrollToThirdSection'); // Reference to the new button
+
+// Event listener for the "Go to Third Section" button
+scrollToThirdSection.addEventListener('click', () => {
+    updateSlide(3); // Scroll directly to the third section (index 2)
+});
+scrollToThirdSection.addEventListener('click', () => {
+    // Trigger the down arrow logic to scroll to the third section
+    downArrow.click();
+});
+
 
 //--------------------------------------------------------------------------------
 function showIntroCard(cardId) {
@@ -888,4 +899,94 @@ const strings = ["TOKEN", "PAYMENT"];
 
     //======================================================================================
 
-    
+
+// Select the progress circle and percentage text
+const progressCircle = document.getElementById('progress-circle');
+const percentageText = document.getElementById('percentage');
+
+// Observer to detect when the circle enters the viewport
+const observerCircle = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            progressCircle.classList.add('active'); // Trigger fade-in effect
+            animateProgressCircle(0, 33, 2000); // Animate the progress circle to 33%
+        }
+    });
+});
+
+// Observe the progress circle element
+observerCircle.observe(progressCircle);
+
+// Function to animate the progress circle
+function animateProgressCircle(start, end, duration) {
+    let current = start;
+    const increment = (end - start) / (duration / 16); // Smooth increment (16ms per frame)
+    const interval = setInterval(() => {
+        current += increment;
+        if (current >= end) {
+            current = end;
+            clearInterval(interval);
+        }
+
+        // Update the conic-gradient to reflect progress
+        const progressColor = `conic-gradient(
+            #a74dfc 0% ${current}%,  /* Purple for progress */
+            #e6e6e6 ${current}% 100% /* Gray for remaining */
+        )`;
+        progressCircle.style.background = progressColor;
+
+        // Update the percentage text
+        percentageText.textContent = `${Math.round(current)}%`;
+    }, 16);
+}
+
+//============================================================================
+
+// Select the progress bar container, fill, and value text
+const progressBarContainer = document.getElementById('progress-bar-container');
+const progressFill = document.getElementById('progress-fill');
+const progressValue = document.getElementById('progress-value');
+
+let isProgressBarAnimating = false; // Track if animation is running
+
+// Observer to detect when the progress bar enters the viewport
+const observerBar = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting && !isProgressBarAnimating) {
+            isProgressBarAnimating = true; // Lock animation
+            progressBarContainer.classList.add('active'); // Trigger fade-in animation
+            animateProgressBar(0, 70, 2000); // Animate progress bar to 70%
+        } else if (!entry.isIntersecting) {
+            // Reset when out of view
+            isProgressBarAnimating = false; // Allow animation to run again
+            resetProgressBar(); // Reset progress bar state
+        }
+    });
+});
+
+// Observe the progress bar container
+observerBar.observe(progressBarContainer);
+
+// Function to animate the progress bar
+function animateProgressBar(start, end, duration) {
+    let current = start;
+    const increment = (end - start) / (duration / 16); // Smooth increment (16ms per frame)
+    const interval = setInterval(() => {
+        current += increment;
+        if (current >= end) {
+            current = end; // Stop at the target value
+            clearInterval(interval);
+        }
+
+        // Update progress bar width and text
+        progressFill.style.width = `${current}%`;
+        progressValue.textContent = `${Math.round((current / 100) * 100)}%`; // Update token count in %
+    }, 16);
+}
+
+// Function to reset the progress bar
+function resetProgressBar() {
+    progressFill.style.width = '0%'; // Reset width
+    progressValue.textContent = '0%'; // Reset text
+    progressBarContainer.classList.remove('active'); // Reset animation class
+}
