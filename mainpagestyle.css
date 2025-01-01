@@ -439,7 +439,7 @@
   
   section {
     width: 100%;
-    height: 110vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -518,6 +518,8 @@
       font-size: 17px;
       padding-left: 30px;
       padding-right: 30px;
+      line-height: 30px;
+      
     }
     .textseconds{
       width: 100%;
@@ -525,6 +527,7 @@
       margin-top: 0px;
       padding-left: 30px;
       padding-right: 30px;
+      line-height: 30px;
     }
   }
   
@@ -801,6 +804,9 @@
       font-size: 12px;
       padding: 5px;
   }
+  .progress-container {
+    margin-top: 100px !important;
+  }
 }
 /*----------section 3 style css -------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------*/
@@ -812,7 +818,7 @@
   opacity: 0; /* Initially hidden */
   transform: scale(0.9); /* Slightly shrunk */
   transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition */
-  margin-top: 200px;
+  margin-top: 150px;
 }
 
 .progress-container.active {
