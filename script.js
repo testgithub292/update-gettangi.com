@@ -990,3 +990,48 @@ function resetProgressBar() {
     progressValue.textContent = '0%'; // Reset text
     progressBarContainer.classList.remove('active'); // Reset animation class
 }
+
+
+/*-----------------------------------------------------------------------------
+---------------------------------------------------------------------------------*/
+function toggleProblemContent(id) {
+    const allContent = document.querySelectorAll('.problem-hidden-content');
+    allContent.forEach(content => {
+      if (content.id !== id) {
+        content.style.display = 'none';
+      }
+    });
+
+    const currentContent = document.getElementById(id);
+    if (currentContent.style.display === 'none' || currentContent.style.display === '') {
+      currentContent.style.display = 'block';
+    } else {
+      currentContent.style.display = 'none';
+    }
+  }
+
+  // Close all content when clicking outside
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('#problem-card')) {
+      document.querySelectorAll('.problem-hidden-content').forEach(content => {
+        content.style.display = 'none';
+      });
+    }
+  });
+
+  // Scroll Animation
+  const observersection2 = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  });
+
+  // Observe the card for animation
+  observersection2.observe(document.getElementById('problem-card-inner'));
+
+  /*---------------------------------------------------------------------------*/
+
