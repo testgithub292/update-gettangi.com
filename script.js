@@ -1199,3 +1199,60 @@ observerelite.observe(document.querySelector('.badge-container'));
             element.style.animationPlayState = 'running';
         });
     });
+
+
+    /*=============================================*/
+
+     // JavaScript for Dropdown Toggle
+     document.addEventListener("DOMContentLoaded", () => {
+        const learnMoreBtn = document.querySelector(".learn-more-btn");
+        const dropdownContent = document.querySelector(".dropdown-content");
+  
+        learnMoreBtn.addEventListener("click", (e) => {
+          e.preventDefault(); // Prevent default link behavior
+          dropdownContent.classList.toggle("show");
+        });
+  
+        document.addEventListener("click", (e) => {
+          // Hide dropdown if clicking outside the card
+          if (!dropdownContent.contains(e.target) && !learnMoreBtn.contains(e.target)) {
+            dropdownContent.classList.remove("show");
+          }
+        });
+      });
+
+      /*-------------------------------------------------------------------*/
+
+      const toggleBtnInvestorGain = document.getElementById("toggleBtn-investor-gain");
+      const hiddenContentInvestorGain = document.getElementById("hiddenContent-investor-gain");
+      const cardInvestorGain = document.getElementById("card-investor-gain");
+  
+      toggleBtnInvestorGain.addEventListener("click", () => {
+        hiddenContentInvestorGain.classList.toggle("visible-investor-gain");
+        toggleBtnInvestorGain.textContent = hiddenContentInvestorGain.classList.contains("visible-investor-gain")
+          ? "Show Less"
+          : "Show More";
+      });
+  
+      // Hide/Show content by clicking anywhere on the page
+      document.addEventListener("click", (event) => {
+        if (!cardInvestorGain.contains(event.target)) {
+          hiddenContentInvestorGain.classList.remove("visible-investor-gain");
+          toggleBtnInvestorGain.textContent = "Show More";
+        }
+      });
+
+      /*-----------------------------------------------*/
+
+      const observersupport = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, { threshold: 0.5 });
+
+    const section = document.querySelector('.support-small-section');
+    observersupport.observe(section);
