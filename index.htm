@@ -579,6 +579,64 @@ Through our strategic relationship with a forward-thinking bank, we’ve achieve
     </div>
   </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="section_9_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Investment Options at a Glance</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="countdown-container">
+          <div class="countdown">
+              <div class="time" id="days">
+                  <span class="number"></span><span class="label">Days</span>
+              </div>
+              <div class="time" id="hours">
+                  <span class="number"></span><span class="label">Hours</span>
+              </div>
+              <div class="time" id="minutes">
+                  <span class="number"></span><span class="label">Minutes</span>
+              </div>
+              <div class="time" id="seconds">
+                  <span class="number"></span><span class="label">Seconds</span>
+              </div>
+          </div>
+          <p class="message">Hurry up! Presale ends soon!</p>
+      </div>
+      <div class="club-container" id="club-container">
+        <div class="club-btn-group">
+          <p>hello</p>
+            <button onclick="toggleClubContent('club-general')">General Presale Entry</button>
+            <button onclick="toggleClubContent('club-elite')">Elite Club Membership</button>
+        </div>
+        <div id="club-general" class="club-content-card">
+            <h3 class="club-heading">General Presale Entry</h3>
+            <p class="club-paragraph">For those looking to begin their investment journey with Tangi, we offer a minimum general entry level of 2,000 tokens. This ensures that all investors, regardless of their portfolio size, can participate in this groundbreaking project and benefit from its long-term value. The general presale is designed to be accessible to a wide range of investors, allowing everyone the opportunity to stake their claim in Tangi's future.</p>
+        </div>
+        <div id="club-elite" class="club-content-card">
+          <div class="badge-container mt-4">
+            <div class="wings left"></div>
+            <div class="wings right"></div>
+            <h1>VIP Elite</h1>
+            <div class="count" id="count">0</div>
+        </div>
+            <h3 class="club-heading">Elite Club Membership</h3>
+            <p class="club-paragraph">For those who wish to seize a larger stake and gain exclusive benefits, the Elite Club Membership provides access to a higher level of participation. Designed for investors with a larger portfolio, this elite membership comes with additional perks and opportunities, including enhanced returns and the ability to influence the project's direction. While the elite club is designed for those ready to commit more significant resources, it remains an essential pillar of Tangi’s commitment to growth and real-world utility.</p>
+        </div>
+    </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!--button type="button" class="btn btn-primary">Save changes</button-->
+      </div>
+    </div>
+  </div>
+</div>
     <header>
         
         
@@ -865,16 +923,18 @@ Through our strategic relationship with a forward-thinking bank, we’ve achieve
       <p>The only way to legally enter this untapped market, without breaking laws or regulations, is by securing support from a willing bank.  Whoever succeeds in securing a banking relationship is likely to take the lead in a market poised to generate transaction fees from $33 billion in annual sales, making it a game-changing achievement. This is the most important and difficult step, and many have tried but failed. In the world of cannabis payments, getting a bank on board is often seen as the Holy Grail—something no one has been able to achieve. Until now.</p>
      
       <!-- Modern link after the content -->
-      <a href="#"  class="modern-link">Market Entry</a>
-      <a href="" data-bs-toggle="modal" data-bs-target="#section_7_modal" class="modern-link">Tangi’s Achievement</a>
-      <a href="" data-bs-toggle="modal" data-bs-target="#section_8_modal" class="modern-link">Competitive Advantage</a>
+      <a href="#"  class="modern-link">Market Entry</a> <b>|</b>
+      <a href="" data-bs-toggle="modal" data-bs-target="#section_7_modal" class="modern-link">Tangi’s Achievement</a> <b>|</b>
+      <a href="" data-bs-toggle="modal" data-bs-target="#section_8_modal" class="modern-link">Competitive Advantage</a> 
    
     </div>
   </div>
 </div>
 
 
-            <div class="intro-container">
+
+
+            <!--div class="intro-container">
               <div class="intro-menu">
                   <a onclick="showIntroCard('intro-card-people')">CryptoFix</a>
                   <a onclick="showIntroCard('intro-card-payroll')">UtiliTrade</a>
@@ -919,22 +979,19 @@ Through our strategic relationship with a forward-thinking bank, we’ve achieve
                       </div>
                   </div>
               </div>
-          </div>
+          </div-->
       
 
 
       
-            <div class="strik_one">
+            <div class="strik_problem">
               <img src="images/Animation - 1734598252880.gif" alt="">
               <p>
-                Seize every opportunity  
-                <br>
-                 on every blockchain with Tangi Token.
+                Secure your spot in Tangi Token’s presale now at just <br> $0.80/token—limited supply
               </p>
             </div>
-        <div class="">
-          <!--div class="horizontal-card">Card 1</div>
-          <div class="horizontal-card">Card 2</div-->
+        <!--div class="">
+          
             <div class="main">
               <ul class="boxes">
                 <li class="boxes_item">
@@ -997,49 +1054,89 @@ Through our strategic relationship with a forward-thinking bank, we’ve achieve
             </div>
             </div>
             
-      </div>
+      </div-->
 
-      <div class="strik_one">
+      <!--div class="strik_one">
         <img src="images/Animation - gif 2.gif" alt="">
         <p>
           Join the  33,000,000,000+ visionaries  
           <br>
           who trust Tangi Token.
         </p>
-      </div>
+      </div-->
 
       <div class="menu">
         <ul class="menu_items">
           <li class="menu_item">
             <div class="menu_card">
               <div class="menu_image">
-                <img src="images/our break-throug solution.gif" alt="mixed vegetable salad in a mason jar." />
+                <body class="supply">
+                  <div class="container supply">
+                      <h2>Limited Token Supply </h2>
+                      <div class="progress-bar supply">
+                          <div class="progress supply">0M</div>
+                      </div>
+                      <div class="info supply">
+                          <p>Total Tokens: <strong>250 Million</strong></p>
+                      </div>
+                      <div class="popup supply">Reached Supply!</div>
+                  </div>
+                <!--img src="images/our break-throug solution.gif" alt="mixed vegetable salad in a mason jar." /-->
                 <!--span class="menu_price"><span>$</span>9</span-->
               </div>
               <div class="menu_content">
-                <h2 class="menu_title">Our Break-through Solution</h2>
+                <h2 class="menu_title">The Power of Early Entry: The Offer</h2>
                 <div class="menu_text">
-                  <b><i> The First CompliantDual Payment Provider in Cannabis.</i></b>
-                  <hr />
-                  <ul>
-                    <li> We’ve formed a relationship with a forward-thinking bank, which allows us to be the first provider of a fully compliant, bank-integrated dual payment solution for the cannabis industry. </li>
-                    <li>Securing a banking partner to serve the $33 billion cannabis market is like finding the Holy </li>
-                    <li> The magnitude of our achievement cannot be overstated. By solving the compliance puzzle, we unlock a $33 billion market for cannabis retailers and offer a pathway to unincumbered growth for our business.</li>
-                    <li>This milestone positions us to provide transparency and trust to 8000 retailers and 60 million consumers and set the stage for token-based transactions.</li>
-        
-                  </ul>
-                  <p><b>A Solution That Solves These Challenges</b></p>
-                  <p>Our <b>compliant, bank-integrated payment</b> solution directly addresses these issues</p>
-                  <p><b><i>Unmatched Market Opportunity</i></b></p>
-                  <ul>
-                    <li>Provides retailers with <b>secure, scalable electronic payment options.</b></li>
-                    <li>Offers consumers the convenience of <b>cashless transactions and rewards.</b></li>
-                    <li>Establishes trust through regulatory compliance, ensuring long-term stability.</li>
-                  </ul>
-                  <p><b>The Significance of Compliance</b></p>
-                  <p>Securing a banking partnership in the cannabis industry is a monumental achievement. It solves the single greatest challenge facing the market: regulatory compliance. Without it, payment providers risk shutdown, leaving retailers and consumers in financial limbo.</p>
-                  <p>We’ve achieved this <b>breakthrough</b>, positioning us as the first <b>compliant dual payment provider</b> in the cannabis market.</p>
-                  <a href="" data-bs-toggle="modal" data-bs-target="#section_2_modal" style="text-decoration: underline;">Learn More</a>
+                  <b style="background-color: lightyellow;">With a fixed maximum supply of 250 million tokens and a public listing ahead, early investors can expect exponential growth as demand for Tangi Token surges.</b>
+                  <a href=""  class="modern-link">Learn About Presale Opportunities</a>
+                <h2 class="menu_title"></h2>
+                  <p>
+                    Post-listing, token circulation will be capped at 50 million seed and presale tokens held exclusively by you and your fellow members, creating scarcity, driving demand, and enhancing value.
+                    There are 10 million tokens in our general presale, broken into 2 blocks of 5 million tokens per block and we believe opportunity and potential should be accessible to everyone, which is why we’ve set a low minimum entry level of just 1,250 tokens at an exclusive starting price of $0.80 per token for the first 5 million tokens. This ensures investors of all levels can participate without overextending themselves. Now is the time to secure your position in our presale before the price rises to $1 per token and the minimum purchase requirement increases for the remaining second block of 5 million tokens.
+                    <a href=""  class="modern-link">Secure Your Tokens Now</a>
+                    <details>
+                      <summary>
+                        <a class="modern-link" style="text-decoration: none;">Learn About Exclusive Opportunities</a>
+                        </summary>
+                      
+                      <div class="container-limit">
+                        <h2 class="limit-h2">Investment Opportunity Summary</h2>
+                        <table class="limit-table">
+                            <tr>
+                                <th>Entry Price</th>
+                                <td><span class="highlight-limit">$0.60</span> per token</td>
+                            </tr>
+                            <tr>
+                                <th>Block Size</th>
+                                <td><span class="highlight-limit">60,000+</span> tokens</td>
+                            </tr>
+                            <tr>
+                                <th>Benefits</th>
+                                <td>
+                                    Estimated <span class="highlight-limit">$50K</span> annual residual income per block.<br>
+                                    Exclusive participation and role in shaping the project.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Limit</th>
+                                <td><span class="highlight-limit">200 members</span> only</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <br>
+                    <p style="background-color: aliceblue; font-family: 'Times New Roman', Times, serif;">
+                      At Tangi, we recognize that the investment community is diverse, with participants ranging from those seeking a modest yet impactful position to highly sophisticated investors with an appetite for greater stakes and benefits. To cater to these discerning individuals, we’ve introduced the Exclusive Tangi Elite Club—a unique offering designed for those purchasing blocks of 50,000+ tokens.
+Membership in this elite club offers unparalleled advantages. At an entry price of just $0.60 per token—25%-40% below the general sale price—members secure an exceptional deal. Beyond this, elite members participate in a profit-sharing structure, receiving 0.1% of net revenues for each block purchased, for the lifetime of the company. Based on conservative estimates, this could translate to an annual residual income of $50,000 per block, assuming only 5% market capture (approximately 400 stores) of a $33 billion market. And this is just one facet of the potential returns.
+As an elite club member, you not only gain a privileged financial position but also play a significant role in shaping the future of the project. Of course, these benefits are in addition to the substantial returns anticipated from holding the token until its public listing—a milestone set to further realize its full value.
+The exclusive members club is limited to just 200 members, ensuring exclusivity and meaningful benefits for those who qualify. This unique structure is designed to reward not just token value growth but also ongoing participation in the company’s success, making it a truly compelling proposition for those ready to seize the opportunity.
+                    </p>
+                    <a href=""  class="modern-link">Request Elite Membership Info</a>
+                  </details>
+                  <h2 class="menu_title"></h2>
+                </p>
+                <a href=""   data-bs-toggle="modal" data-bs-target="#section_9_modal" class="modern-link">Comprehensive Offer Overview</a>
+                 
+                  
                 </div>
               </div>
             </div>
@@ -1052,26 +1149,55 @@ Through our strategic relationship with a forward-thinking bank, we’ve achieve
                 <!--span class="menu_price"><span>$</span>18</span-->
               </div>
               <div class="menu_content">
-                <h2 class="menu_title">The Token Opportunity</h2>
+                <h2 class="menu_title">Market Entry</h2>
                 <div class="menu_text">
-                  <p><b><i>A Compliant Platform: The Launchpad for Token Growth</i></b></p>
-                  <p>Our compliant, bank-integrated payment solution doesn’t just solve the cannabis industry’s payment challenges—it creates the perfect platform for scaling our token payment option, unlocking significant investor potential.</p>
-                  <hr />
-                  <ul>
-                    <li>Retailers Get What They’ve Been Waiting For: A payment system they can trust, free from the fear of regulatory shutdowns.</li>
-                    <li>Familiarity Drives Adoption: Our solution offers trusted traditional payment methods, ensuring quick and seamless customer onboarding.</li>
-                    <li>The Trojan Horse for Token Adoption: Once onboarded, customers are incentivized to transition to token payments through rewards, discounts, and financial benefits, driving widespread adoption and value growth.</li>
-                  </ul>
-                  <p><b>The Market Is Ready for Us</b></p>
-                  <p>Retailers in the cannabis industry have long struggled with the limitations of cash-only payments. Many are desperate for a solution that allows them to operate efficiently, securely, and transparently—just like businesses in every other sector.</p>
-                  <ul>
-                    <li><b>Retailers’ Essential Need:</b>Compliance isn’t just a nice-to-have; it’s critical for survival. Retailers are actively searching for a trusted, legal payment solution that frees them from the risks and inefficiencies of cash transactions. Our bank-integrated system is exactly what they’ve been waiting for, offering stability and peace of mind in a way no one else can.</li>
-                    <li><b>Consumers Are Ready for Change:</b> Shoppers are tired of the inconvenience of cash and want the same modern payment options they enjoy in other industries. The promise of rewards programs and digital payments isn’t just appealing—it’s a game-changer that saves them money and enhances their shopping experience.</li>
-                  </ul>
-                  <p>Our solution meets this urgent demand on both fronts, ensuring swift adoption and lasting loyalty from retailers and consumers alike.</p>
-                  <a href="#" class="read-more">
-                    
-                    <a href="" data-bs-toggle="modal" data-bs-target="#section_3_modal" style="text-decoration: underline;">Learn More</a>
+            <p>
+              Tangi’s entry into the market is built on the foundation of our groundbreaking compliance achievement, which allowed us to introduce a compliant, bank-integrated traditional payment solution. This solution serves as the gateway, seamlessly onboarding retailers and consumers while laying the groundwork for Tangi Token adoption. By leveraging the trust and familiarity of traditional payments, we ensure that customers and retailers are captured effortlessly into our ecosystem.
+            </p>
+            <h2 class="menu_title"></h2>
+
+            <div class="marketEntrybody">
+              <div class="marketEntryContainer">
+                <!-- Traditional Payment Flow -->
+                <div class="marketEntrySide" id="marketEntryTraditionalPayment">
+                    <h2>Traditional Payment</h2>
+                    <div class="marketEntryPaymentFlow">
+                        <div class="marketEntryStep" style="animation-delay: 0.2s;">1. Customer makes a payment</div>
+                        <div class="marketEntryStep" style="animation-delay: 0.4s;">2. Payment is processed by a bank</div>
+                        <div class="marketEntryStep" style="animation-delay: 0.6s;">3. Merchant receives payment</div>
+                    </div>
+                </div>
+            
+                <div class="marketEntryArrow" style="animation-delay: 1s;">⬇️</div>
+            
+                <!-- Tangi Token Transition -->
+                <div class="marketEntrySide" id="marketEntryTangiPayment">
+                    <h2>Tangi Token Transition</h2>
+                    <div class="marketEntryPaymentFlow">
+                        <div class="marketEntryStep" style="animation-delay: 0.2s;">1. Customer selects Tangi Token</div>
+                        <div class="marketEntryStep" style="animation-delay: 0.4s;">2. Tangi Token is verified through blockchain</div>
+                        <div class="marketEntryStep" style="animation-delay: 0.6s;">3. Merchant receives Tangi Token payment</div>
+                    </div>
+            
+                    <div class="marketEntryTransitionText" style="animation-delay: 1s;">+ Benefits</div>
+                    <div class="marketEntryBenefits">
+                        <div class="marketEntryBenefit" style="animation-delay: 1.2s;">Fast Transactions</div>
+                        <div class="marketEntryBenefit" style="animation-delay: 1.4s;">Lower Transaction Fees</div>
+                        <div class="marketEntryBenefit" style="animation-delay: 1.6s;">Global Accessibility</div>
+                        <div class="marketEntryBenefit" style="animation-delay: 1.8s;">Rewards Program</div>
+                    </div>
+                </div>
+            </div>
+            </div>
+          <br>
+          <br>
+           <div>
+            <p>
+              The interconnected nature of our dual-payment system is intentional and strategic. While the traditional payment option performs the critical role of customer acquisition, Tangi Token emerges as the ultimate beneficiary. Transitioning consumers from traditional payments to token payments is a natural progression, driven by the tangible benefits Tangi offers. Consumers are incentivized with exclusive discounts and rewards that are unavailable through traditional methods. Retailers, in turn, prefer token payments because of lower transaction fees, offering them cost savings while maintaining compliance.
+            </p>
+           </div>
+                                
+
                 </div>
               </div>
             </div>
@@ -1081,26 +1207,25 @@ Through our strategic relationship with a forward-thinking bank, we’ve achieve
             <div class="menu_card">
               <div class="menu_image">
                 <!--span class="menu_note">Seasonal</span-->
-                <img src="images/why chose tangi (2).gif" alt="A side view of a plate of figs and berries." />
+                <img src="images/Compliant Pathway.png" alt="A side view of a plate of figs and berries." />
                 <!--span class="menu_price"><span>$</span>16</span-->
               </div>
               <div class="menu_content">
-                <h2 class="menu_title">Why Choose Tangi?</h2>
+                <h2 class="menu_title">Strategic Integration of Tangi Token: The Core of Our Ecosystem</h2>
                 <div class="menu_text">
-                  <b><i>Our system aligns the interests of all participants, creating a mutually beneficial ecosystem</i></b>
-                  <hr />
-                  <ul>
-                    <li data-bs-toggle="modal" data-bs-target="#section_4_4_modal" style="cursor: pointer;"> Investors gain from rising token demand, with a ready market to sell into when the token lists. <b style="color: blue;"> Learn More ➔</b></li>
-                    <li data-bs-toggle="modal" data-bs-target="#section_4_2_modal" style="cursor: pointer;">Retailers save on transaction fees and gain a competitive edge. <b style="color: blue;"> Learn More ➔</b></li>
-                    <li data-bs-toggle="modal" data-bs-target="#section_4_3_modal" style="cursor: pointer;">The company profits sustainably through transaction fee revenues. <b style="color: blue;"> Learn More ➔</b></li>
-                    <li  data-bs-toggle="modal" data-bs-target="#section_4_1_modal" style="cursor: pointer;">Consumers benefit from rewards and financial perks. <b style="color: blue;"> Learn More ➔</b></li>
-                  </ul>
+               <p>
+                This dual strategy ensures that Tangi Token remains at the core of our business model, even though it may initially appear to play a supporting role. By deliberately allowing traditional payments to establish the relationship, we create a compliant pathway for Tangi Token’s seamless adoption. This approach not only ensures compliance but also positions Tangi as the most rewarding option for consumers, the most cost-effective solution for retailers, and the most profitable avenue for our company.
+                Tangi is not just another option—it is the beating heart of our ecosystem. Our entire payment strategy is designed to funnel users toward the token, maximizing adoption and ensuring its success. This deliberate and interconnected approach creates a winning formula for retailers, consumers, and investors alike, setting Tangi apart as the core driver of value and growth.
+               </p>
+                  <a  class="modern-link">Dual-payment model</a>
                 </div>
               </div>
             </div>
           </li>
         </ul>
       </div>
+
+      
       
       <!--section 3 --------------------------------------------------------------------------->
       <div class="strik_one">

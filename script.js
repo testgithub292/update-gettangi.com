@@ -1035,3 +1035,167 @@ function toggleProblemContent(id) {
 
   /*---------------------------------------------------------------------------*/
 
+  const progressBar = document.querySelector('.progress.supply');
+  const popup = document.querySelector('.popup.supply');
+
+  const animateGrowth = () => {
+      let growthPercentage = 0;
+      const maxGrowthSteps = [20, 40, 60];
+      let currentStep = 0;
+      const colors = ['#4caf50', '#ff5722', '#2196f3'];
+
+      const interval = setInterval(() => {
+          growthPercentage++;
+          progressBar.style.width = growthPercentage + '%';
+          progressBar.textContent = Math.floor((growthPercentage / 100) * 250) + 'M';
+
+          if (growthPercentage >= maxGrowthSteps[currentStep]) {
+              progressBar.style.backgroundColor = colors[currentStep];
+
+              popup.textContent = `Reached ${Math.floor((maxGrowthSteps[currentStep] / 100) * 250)}M Supply!`;
+              popup.style.display = 'block';
+
+              setTimeout(() => {
+                  popup.style.display = 'none';
+              }, 500);
+
+              currentStep++;
+
+              if (currentStep === maxGrowthSteps.length) {
+                  clearInterval(interval);
+              }
+          }
+      }, 50);
+  };
+
+  const observersupply = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              animateGrowth();
+          }
+      });
+  });
+
+  observersupply.observe(document.querySelector('.progress-bar.supply'));
+
+  //==================================================================================
+
+   // Detect when the table is visible on the screen and apply the fade-in animation
+   window.addEventListener('scroll', function() {
+    const table = document.querySelector('.limit-table');
+    const tablePosition = table.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight;
+
+    // If the table is in view, add the animation class
+    if (tablePosition < screenPosition) {
+        table.style.opacity = 1;  // Ensure visibility when it comes into view
+    }
+});
+
+
+//=====================================================================================
+//--========================================================================================
+
+// Set the date we're counting down to
+const targetDate = new Date("2025-04-01T00:00:00").getTime();
+
+// If there's a saved time in localStorage, use that; otherwise, calculate it
+let savedTime = localStorage.getItem("countdownEndTime");
+if (!savedTime) {
+    savedTime = targetDate;
+    localStorage.setItem("countdownEndTime", savedTime);
+}
+
+// Update the countdown every 1 second
+const interval = setInterval(function() {
+    // Get the current time
+    const now = new Date().getTime();
+
+    // Calculate the distance between now and the target date
+    const distance = savedTime - now;
+
+    // Time calculations
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the result in the respective elements
+    document.getElementById("days").textContent = `${days}d`;
+    document.getElementById("hours").textContent = `${hours}h`;
+    document.getElementById("minutes").textContent = `${minutes}m`;
+    document.getElementById("seconds").textContent = `${seconds}s`;
+
+    // If the countdown is over, display a message
+    if (distance < 0) {
+        clearInterval(interval);
+        document.querySelector(".message").textContent = "Presale has ended!";
+        document.querySelector(".countdown").style.display = "none";
+        localStorage.removeItem("countdownEndTime");  // Remove saved time after countdown ends
+    }
+}, 1000);
+
+
+//=========================================================================================
+
+function toggleClubContent(contentId) {
+    // Hide all content cards
+    document.querySelectorAll('.club-content-card').forEach(content => {
+        content.classList.remove('active');
+    });
+
+    // Show the selected content card
+    const selectedContent = document.getElementById(contentId);
+    if (selectedContent) {
+        selectedContent.classList.add('active');
+    }
+}
+
+// Hide content when clicking outside the card
+document.addEventListener('click', function(event) {
+    const container = document.getElementById('club-container');
+    if (!container.contains(event.target)) {
+        document.querySelectorAll('.club-content-card').forEach(content => {
+            content.classList.remove('active');
+        });
+    }
+});
+
+
+//=========================================================================
+
+const target = 200;
+const countElement = document.getElementById("count");
+
+const startCounter = () => {
+    let count = 0;
+    countElement.textContent = count; // Reset count display
+    const interval = setInterval(() => {
+        if (count < target) {
+            count++;
+            countElement.textContent = count;
+        } else {
+            clearInterval(interval);
+        }
+    }, 20);
+};
+
+const observerelite = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            startCounter();
+        }
+    });
+});
+
+observerelite.observe(document.querySelector('.badge-container'));
+
+//================================================================================
+
+    // Triggering animations on page load
+    window.addEventListener('load', () => {
+        const elements = document.querySelectorAll('.marketEntrySide, .marketEntryArrow, .marketEntryStep, .marketEntryBenefit');
+        elements.forEach((element) => {
+            element.style.animationPlayState = 'running';
+        });
+    });
