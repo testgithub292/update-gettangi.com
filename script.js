@@ -1256,3 +1256,120 @@ observerelite.observe(document.querySelector('.badge-container'));
 
     const section = document.querySelector('.support-small-section');
     observersupport.observe(section);
+
+
+    //======================================================================
+
+    document.addEventListener('click', function(event) {
+        const hiddenContent = document.getElementById('hiddenContent');
+        const showMoreBtn = document.getElementById('showMoreBtn');
+        const card = document.querySelector('.card');
+    
+        // Check if hidden content is expanded
+        if (hiddenContent.classList.contains('expanded')) {
+            // Check if click is outside card
+            if (!card.contains(event.target)) {
+                hiddenContent.classList.remove('expanded');
+                showMoreBtn.textContent = 'Show More';
+            }
+        }
+    });
+    
+    // Prevent click inside card from triggering the document click
+    document.getElementById('showMoreBtn').addEventListener('click', function(event) {
+        event.stopPropagation();
+        const hiddenContent = document.getElementById('hiddenContent');
+        hiddenContent.classList.toggle('expanded');
+        this.textContent = hiddenContent.classList.contains('expanded') ? 'Show Less' : 'Show More';
+    });
+    
+    // Add touch feedback
+    document.querySelectorAll('.info-card').forEach(card => {
+        card.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.98)';
+        });
+    
+        card.addEventListener('touchend', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+
+
+    /*================================================================*/
+
+    const section9GrowthElement = document.getElementById('section9-growth');
+    const section9YearElement = document.getElementById('section9-year');
+    const section9Container = document.getElementById('section9-growthContainer');
+
+    let section9Growth = 33;
+    let section9Year = 2024;
+
+    const section9TargetGrowth = 67;
+    const section9TargetYear = 2028;
+
+    const section9Milestones = [40, 50, 60, 67]; // The growth milestones
+    const section9Years = [2025, 2026, 2027, 2028]; // The corresponding years
+    let section9MilestoneIndex = 0;
+    let section9Interval;
+
+    let section9IsAnimationComplete = false;  // Track if the animation has completed
+
+    function section9UpdateGrowthAndYear() {
+      if (section9MilestoneIndex < section9Milestones.length && !section9IsAnimationComplete) {
+        const section9TargetGrowthForStep = section9Milestones[section9MilestoneIndex];
+        const section9TargetYearForStep = section9Years[section9MilestoneIndex];
+
+        section9Interval = setInterval(() => {
+          if (section9Growth < section9TargetGrowthForStep) {
+            section9Growth++;
+            section9GrowthElement.textContent = `$${section9Growth} Billion`;
+          }
+
+          if (section9Year < section9TargetYearForStep) {
+            section9Year++;
+            section9YearElement.textContent = section9Year;
+          }
+
+          if (section9Growth >= section9TargetGrowthForStep && section9Year >= section9TargetYearForStep) {
+            clearInterval(section9Interval);
+            section9MilestoneIndex++;
+            if (section9MilestoneIndex < section9Milestones.length) {
+              setTimeout(section9UpdateGrowthAndYear, 1000);
+            }
+          }
+
+          if (section9Growth === section9TargetGrowth && section9Year === section9TargetYear) {
+            section9TriggerFinalAnimation();
+            section9IsAnimationComplete = true;
+          }
+
+        }, 50);
+      }
+    }
+
+    function section9TriggerFinalAnimation() {
+      section9Container.classList.add('section9-final-animation');
+    }
+
+    function section9ResetAnimation() {
+      if (!section9IsAnimationComplete) {
+        section9Container.classList.remove('section9-final-animation');
+        section9Growth = 33;
+        section9Year = 2024;
+        section9GrowthElement.textContent = `$${section9Growth} Billion`;
+        section9YearElement.textContent = section9Year;
+      }
+    }
+
+    const section9Observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !section9IsAnimationComplete) {
+          section9UpdateGrowthAndYear();
+          section9TriggerFinalAnimation();
+        } else if (!entry.isIntersecting && !section9IsAnimationComplete) {
+          section9ResetAnimation();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    section9Observer.observe(section9Container);
